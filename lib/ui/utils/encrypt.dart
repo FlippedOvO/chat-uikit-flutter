@@ -71,8 +71,3 @@ class Encrypt {
     return encrypter.decryptBytes(Encrypted(cipherText), iv: IV(iv));
   }
 }
-
-Uint8List _encode(String s) {
-  Uint8List bytes = Uint8List.fromList(s.codeUnits);
-  return bytes;
-}
