@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/link_preview/common/utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/link_preview/widgets/link_preview.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/link_preview/widgets/link_text.dart';
@@ -22,10 +23,12 @@ class LinkPreviewEntry {
           ? LinkTextMarkdown(
               isUseQQPackage: isUseQQPackage,
               isUseTencentCloudChatPackage: isUseTencentCloudChatPackage,
-              isUseTencentCloudChatPackageOldKeys: isUseTencentCloudChatPackageOldKeys,
+              isUseTencentCloudChatPackageOldKeys:
+                  isUseTencentCloudChatPackageOldKeys,
               customEmojiStickerList: customEmojiStickerList,
               isEnableTextSelection: isEnableTextSelection,
-              messageText: addSpaceAfterLeftBracket(addSpaceBeforeHttp(replaceSingleNewlineWithTwo(messageText))),
+              messageText: addSpaceAfterLeftBracket(
+                  addSpaceBeforeHttp(replaceSingleNewlineWithTwo(messageText))),
               style: style,
               onLinkTap: onLinkTap)
           : LinkText(
@@ -35,7 +38,8 @@ class LinkPreviewEntry {
               onLinkTap: onLinkTap,
               isUseQQPackage: isUseQQPackage,
               isUseTencentCloudChatPackage: isUseTencentCloudChatPackage,
-              isUseTencentCloudChatPackageOldKeys: isUseTencentCloudChatPackageOldKeys,
+              isUseTencentCloudChatPackageOldKeys:
+                  isUseTencentCloudChatPackageOldKeys,
               customEmojiStickerList: customEmojiStickerList);
     };
   }
@@ -67,8 +71,10 @@ class LinkPreviewEntry {
   /// get the [LinkPreviewContent] with preview widget and website information for the first link.
   /// If you provide `onUpdateMessage(String linkInfoJson)`, it can save the link info to local custom data than call updating the message on UI automatically.
   static Future<LinkPreviewContent?> getFirstLinkPreviewContent(
-      {required V2TimMessage message, ValueChanged<V2TimMessage>? onUpdateMessage}) async {
-    final String? messageText = message.textElem?.text;
+      {required V2TimMessage message,
+      ValueChanged<V2TimMessage>? onUpdateMessage}) async {
+    final String? messageText =
+        Encrypt.shared.decrypt(message.textElem?.text ?? "");
     if (messageText == null) {
       return null;
     }
@@ -78,7 +84,8 @@ class LinkPreviewEntry {
       return null;
     }
 
-    final List<LocalCustomDataModel?> previewItemList = await LinkUtils.getURLPreview([urlMatches[0]]);
+    final List<LocalCustomDataModel?> previewItemList =
+        await LinkUtils.getURLPreview([urlMatches[0]]);
     if (previewItemList.isNotEmpty) {
       final LocalCustomDataModel previewItem = previewItemList.first!;
       if (onUpdateMessage != null) {
@@ -94,8 +101,10 @@ class LinkPreviewEntry {
   }
 
   /// get the [LinkPreviewContent] with preview widget and website information for all the links
-  static Future<List<LinkPreviewContent?>?> getAllLinkPreviewContent(V2TimMessage message) async {
-    final String? messageText = message.textElem?.text;
+  static Future<List<LinkPreviewContent?>?> getAllLinkPreviewContent(
+      V2TimMessage message) async {
+    final String? messageText =
+        Encrypt.shared.decrypt(message.textElem?.text ?? "");
     if (messageText == null) {
       return null;
     }
@@ -105,7 +114,8 @@ class LinkPreviewEntry {
       return [];
     }
 
-    final List<LocalCustomDataModel> previewItemList = await LinkUtils.getURLPreview([urlMatches[0]]);
+    final List<LocalCustomDataModel> previewItemList =
+        await LinkUtils.getURLPreview([urlMatches[0]]);
     if (previewItemList.isNotEmpty) {
       final List<LinkPreviewContent?> resultList = previewItemList
           .map((e) => LinkPreviewContent(

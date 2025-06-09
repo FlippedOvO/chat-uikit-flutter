@@ -11,6 +11,7 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_group_member_info.dart'
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitTextField/special_text/DefaultSpecialTextSpanBuilder.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
@@ -111,7 +112,7 @@ class _MessageReadReceiptState extends TIMUIKitState<MessageReadReceipt> {
             isFromSelf: isFromSelf,
             localCustomInt: message.localCustomInt);
       case MessageElemType.V2TIM_ELEM_TYPE_TEXT:
-        return ExtendedText(message.textElem!.text!,
+        return ExtendedText(Encrypt.shared.decrypt(message.textElem!.text!),
             softWrap: true,
             style: const TextStyle(fontSize: 16),
             specialTextSpanBuilder: DefaultSpecialTextSpanBuilder(

@@ -125,7 +125,7 @@ class _TIMUIKitLastMsgState extends TIMUIKitState<TIMUIKitLastMsg> {
       case MessageElemType.V2TIM_ELEM_TYPE_SOUND:
         return TIM_t("[语音]");
       case MessageElemType.V2TIM_ELEM_TYPE_TEXT:
-        return (widget.lastMsg?.textElem?.text)?.trim() ?? "";
+        return Encrypt.shared.decrypt((widget.lastMsg?.textElem?.text)?.trim() ?? "");
       case MessageElemType.V2TIM_ELEM_TYPE_FACE:
         return TIM_t("[表情]");
       case MessageElemType.V2TIM_ELEM_TYPE_FILE:
