@@ -47,14 +47,15 @@ class Encrypt {
     if (text.isEmpty) return "";
     final encrypter = Encrypter(AES(_key, mode: AESMode.cbc));
     final encrypted = encrypter.encrypt(text, iv: IV(iv));
-    return String.fromCharCodes(encrypted.bytes);
+    return base64.encode(encrypted.bytes);
   }
 
   // 解密字符串
   String decrypt(String text) {
     if (text.isEmpty) return "";
+    final t = base64.decode(text);
     final encrypter = Encrypter(AES(_key, mode: AESMode.cbc));
-    return encrypter.decrypt(Encrypted(_encode(text)), iv: IV(iv));
+    return encrypter.decrypt(Encrypted(t), iv: IV(iv));
   }
 
   // 加密二进制数据
@@ -74,19 +75,4 @@ class Encrypt {
 Uint8List _encode(String s) {
   Uint8List bytes = Uint8List.fromList(s.codeUnits);
   return bytes;
-}
-
-void main() {
-  // 创建加密实例
-  final aes = Encrypt.shared;
-
-  // 加密字符串
-  const originalText = 'Hello AES-256 with fixed salt/IV! 你好，世界！🔐';
-  final encrypted = aes.encrypt(originalText);
-  print('加密结果 (Base64): ${base64.encode(_encode(encrypted))}');
-
-  // 解密字符串
-  final decryptedText = aes.decrypt(encrypted);
-  print('解密结果: $decryptedText');
-  print('解密成功: ${decryptedText == originalText}');
 }
