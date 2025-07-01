@@ -3,1333 +3,1327 @@
   "packages": [
     {
       "name": "_fe_analyzer_shared",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-72.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-85.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
-    },
-    {
-      "name": "_macros",
-      "rootUri": "file:///C:/Users/flipp/fvm/versions/3.24.4/bin/cache/dart-sdk/pkg/_macros",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.5"
     },
     {
       "name": "adaptive_action_sheet",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/adaptive_action_sheet-2.0.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/adaptive_action_sheet-2.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "analyzer",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/analyzer-6.7.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/analyzer-7.5.2",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "args",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/args-2.7.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/args-2.7.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "asn1lib",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/asn1lib-1.5.8",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/asn1lib-1.6.5",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "async",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/async-2.13.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/async-2.13.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "audio_session",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/audio_session-0.1.25",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/audio_session-0.1.25",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "azlistview_all_platforms",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/azlistview_all_platforms-2.1.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/azlistview_all_platforms-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "better_player_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/better_player_plus-1.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/better_player_plus-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "boolean_selector",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/boolean_selector-2.1.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "build",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build-2.5.4",
       "packageUri": "lib/",
-      "languageVersion": "2.19"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_config",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build_config-1.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build_config-1.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.6"
     },
     {
       "name": "build_daemon",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build_daemon-4.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build_daemon-4.0.4",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "build_resolvers",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build_resolvers-2.4.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build_resolvers-2.5.4",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_runner",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build_runner-2.4.13",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build_runner-2.5.4",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "build_runner_core",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/build_runner_core-7.3.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/build_runner_core-9.1.2",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "built_collection",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/built_collection-5.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/built_collection-5.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "built_value",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/built_value-8.10.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/built_value-8.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "cached_network_image",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/cached_network_image-3.3.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/cached_network_image-3.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "cached_network_image_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/cached_network_image_platform_interface-4.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/cached_network_image_platform_interface-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "cached_network_image_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/cached_network_image_web-1.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/cached_network_image_web-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "characters",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/characters-1.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/characters-1.4.0",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "charcode",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/charcode-1.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/charcode-1.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "checked_yaml",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/checked_yaml-2.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/checked_yaml-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "chewie",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/chewie-1.8.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/chewie-1.8.5",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "clock",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/clock-1.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/clock-1.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "code_builder",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/code_builder-4.10.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/code_builder-4.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "collection",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/collection-1.18.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/collection-1.19.1",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.4"
     },
     {
       "name": "convert",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/convert-3.1.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/convert-3.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "cross_file",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/cross_file-0.3.4+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/cross_file-0.3.4+2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "crypto",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/crypto-3.0.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/crypto-3.0.6",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "csslib",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/csslib-0.17.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/csslib-0.17.3",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "csv",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/csv-5.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/csv-5.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "cupertino_icons",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/cupertino_icons-1.0.8",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/cupertino_icons-1.0.8",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "dart_style",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/dart_style-2.3.7",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/dart_style-3.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.7"
     },
     {
       "name": "dbus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/dbus-0.7.11",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/dbus-0.7.11",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "desktop_drop",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/desktop_drop-0.4.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/desktop_drop-0.4.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "device_info_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/device_info_plus-10.1.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus-10.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "device_info_plus_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus_platform_interface-7.0.3",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "3.7"
     },
     {
       "name": "diff_match_patch",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/diff_match_patch-0.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/diff_match_patch-0.4.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "dotted_border",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/dotted_border-2.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/dotted_border-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "encrypt",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/encrypt-5.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/encrypt-5.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "extended_image",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/extended_image-9.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/extended_image-9.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "extended_image_library",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/extended_image_library-4.0.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/extended_image_library-4.0.6",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "extended_text",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/extended_text-14.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/extended_text-15.0.2",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "extended_text_field",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/extended_text_field-16.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/extended_text_field-16.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "extended_text_library",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/extended_text_library-12.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/extended_text_library-12.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "fast_i18n",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/fast_i18n-5.12.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/fast_i18n-5.12.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "fc_native_video_thumbnail",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/fc_native_video_thumbnail-0.16.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/fc_native_video_thumbnail-0.16.1",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "ffi",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/ffi-2.1.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/ffi-2.1.4",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.7"
     },
     {
       "name": "file",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file-6.1.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file-6.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "file_picker",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file_picker-5.5.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file_picker-9.2.3",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.4"
     },
     {
       "name": "file_selector_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file_selector_linux-0.9.3+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file_selector_linux-0.9.3+2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "file_selector_macos",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file_selector_macos-0.9.4+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file_selector_macos-0.9.4+3",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.6"
     },
     {
       "name": "file_selector_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file_selector_platform_interface-2.6.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file_selector_platform_interface-2.6.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "file_selector_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/file_selector_windows-0.9.3+4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/file_selector_windows-0.9.3+4",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "fixnum",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/fixnum-1.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/fixnum-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "flutter",
-      "rootUri": "file:///C:/Users/flipp/fvm/default/packages/flutter",
+      "rootUri": "file:///Volumes/Anything/workspace/fvm/versions/3.29.3/packages/flutter",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.7"
     },
     {
       "name": "flutter_cache_manager",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_cache_manager-3.3.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_cache_manager-3.3.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "flutter_easyrefresh",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-2.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyrefresh-2.2.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress-2.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress_common",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress_common-1.0.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress_common-1.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress_macos",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress_macos-1.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress_macos-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress_ohos",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress_ohos-0.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress_ohos-0.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress_platform_interface-1.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress_platform_interface-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_image_compress_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_image_compress_web-0.1.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_image_compress_web-0.1.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_lints-1.0.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_lints-1.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "flutter_localizations",
-      "rootUri": "file:///C:/Users/flipp/fvm/default/packages/flutter_localizations",
+      "rootUri": "file:///Volumes/Anything/workspace/fvm/versions/3.29.3/packages/flutter_localizations",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.7"
     },
     {
       "name": "flutter_markdown",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_markdown-0.6.23",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_markdown-0.6.23",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "flutter_plugin_android_lifecycle",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-2.0.26",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-2.0.28",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.6"
     },
     {
       "name": "flutter_plugin_record_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_plugin_record_plus-0.0.20",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_record_plus-0.0.21",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "flutter_slidable_plus_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_slidable_plus_plus-0.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_slidable_plus_plus-0.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "flutter_svg",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_svg-2.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_svg-2.2.0",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///C:/Users/flipp/fvm/default/packages/flutter_web_plugins",
+      "rootUri": "file:///Volumes/Anything/workspace/fvm/versions/3.29.3/packages/flutter_web_plugins",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.7"
     },
     {
       "name": "flutter_widget_from_html_core",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/flutter_widget_from_html_core-0.10.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/flutter_widget_from_html_core-0.10.6",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "frontend_server_client",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/frontend_server_client-4.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/frontend_server_client-4.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "get_it",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/get_it-7.7.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/get_it-7.7.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "glob",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/glob-2.1.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/glob-2.1.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "graphs",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/graphs-2.3.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/graphs-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "html",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/html-0.15.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/html-0.15.4",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "http",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/http-1.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/http-1.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "http_client_helper",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/http_client_helper-3.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/http_client_helper-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "http_multi_server",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/http_multi_server-3.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/http_multi_server-3.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "http_parser",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/http_parser-4.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/http_parser-4.1.2",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "3.4"
     },
     {
       "name": "image_gallery_saver_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_gallery_saver_plus-3.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_gallery_saver_plus-4.0.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.5"
     },
     {
       "name": "image_picker",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker-0.8.9",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker-0.8.9",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "image_picker_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_android-0.8.12+21",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_android-0.8.12+23",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.6"
     },
     {
       "name": "image_picker_for_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_for_web-2.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_for_web-2.1.12",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.17"
     },
     {
       "name": "image_picker_ios",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_ios-0.8.12+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_ios-0.8.12+2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "image_picker_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_linux-0.2.1+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_linux-0.2.1+2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "image_picker_macos",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_macos-0.2.1+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_macos-0.2.1+2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "image_picker_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_platform_interface-2.10.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_platform_interface-2.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "image_picker_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/image_picker_windows-0.2.1+1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/image_picker_windows-0.2.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "intl",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/intl-0.19.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/intl-0.19.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "io",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/io-1.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/io-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "js",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/js-0.6.7",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/js-0.6.7",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "json_annotation",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/json_annotation-4.9.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/json_annotation-4.9.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "just_audio",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/just_audio-0.9.46",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/just_audio-0.9.46",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "just_audio_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/just_audio_platform_interface-4.5.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/just_audio_platform_interface-4.5.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "just_audio_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/just_audio_web-0.4.16",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/just_audio_web-0.4.16",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "link_preview_generator_for_us",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/link_preview_generator_for_us-2.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/link_preview_generator_for_us-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "lints",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/lints-1.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/lints-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "loading_animation_widget",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/loading_animation_widget-1.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/loading_animation_widget-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.16"
     },
     {
       "name": "logger",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/logger-2.5.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/logger-2.6.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "logging",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/logging-1.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/logging-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "lpinyin",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/lpinyin-2.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/lpinyin-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
-      "name": "macros",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/macros-0.1.2-main.4",
-      "packageUri": "lib/",
-      "languageVersion": "3.4"
-    },
-    {
       "name": "markdown",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/markdown-7.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/markdown-7.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "matcher",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/matcher-0.12.17",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/matcher-0.12.17",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "material_color_utilities",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/material_color_utilities-0.11.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/material_color_utilities-0.11.1",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "meta",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/meta-1.15.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/meta-1.16.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "mime",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/mime-1.0.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/mime-2.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "mime_type",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/mime_type-1.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/mime_type-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "nested",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/nested-1.0.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/nested-1.0.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "octo_image",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/octo_image-2.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/octo_image-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "open_file",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file-3.5.10",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file-3.5.10",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_android-1.0.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_android-1.0.6",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_ios",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_ios-1.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_ios-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_linux-0.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_linux-0.0.5",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_mac",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_mac-1.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_mac-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_platform_interface-1.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_platform_interface-1.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_web-0.0.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_web-0.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "open_file_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/open_file_windows-0.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/open_file_windows-0.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "package_config",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/package_config-2.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/package_config-2.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "package_info_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/package_info_plus-8.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus-8.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "package_info_plus_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/package_info_plus_platform_interface-3.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/package_info_plus_platform_interface-3.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.18"
     },
     {
       "name": "pasteboard",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/pasteboard-0.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/pasteboard-0.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path-1.9.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path-1.9.1",
       "packageUri": "lib/",
-      "languageVersion": "3.0"
+      "languageVersion": "3.4"
     },
     {
       "name": "path_drawing",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_drawing-1.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_drawing-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "path_parsing",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_parsing-1.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_parsing-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "path_provider",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider-2.1.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider-2.1.5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "path_provider_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider_android-2.2.15",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider_android-2.2.17",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.6"
     },
     {
       "name": "path_provider_foundation",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "path_provider_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider_linux-2.2.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
     {
       "name": "path_provider_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider_platform_interface-2.1.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider_platform_interface-2.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "path_provider_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/path_provider_windows-2.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.3.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "permission_handler",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/permission_handler-10.4.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-11.4.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "3.5"
     },
     {
       "name": "permission_handler_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/permission_handler_android-10.3.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_android-12.1.0",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "3.5"
     },
     {
       "name": "permission_handler_apple",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/permission_handler_apple-9.1.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_apple-9.4.7",
       "packageUri": "lib/",
-      "languageVersion": "2.15"
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "permission_handler_html",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_html-0.1.3+5",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
     },
     {
       "name": "permission_handler_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/permission_handler_platform_interface-3.12.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_platform_interface-4.3.0",
       "packageUri": "lib/",
-      "languageVersion": "2.14"
+      "languageVersion": "3.5"
     },
     {
       "name": "permission_handler_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/permission_handler_windows-0.1.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_windows-0.2.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "petitparser",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/petitparser-6.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/petitparser-6.1.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.5"
     },
     {
       "name": "photo_manager",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/photo_manager-3.7.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/photo_manager-3.7.1",
       "packageUri": "lib/",
       "languageVersion": "2.13"
     },
     {
       "name": "photo_manager_image_provider",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/photo_manager_image_provider-2.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/photo_manager_image_provider-2.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.13"
     },
     {
       "name": "platform",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/platform-3.1.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/platform-3.1.6",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "plugin_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/plugin_platform_interface-2.1.8",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/plugin_platform_interface-2.1.8",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "pointycastle",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/pointycastle-3.9.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/pointycastle-3.9.1",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "pool",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/pool-1.5.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/pool-1.5.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "provider",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/provider-6.1.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/provider-6.1.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "pub_semver",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/pub_semver-2.2.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/pub_semver-2.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "pubspec_parse",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/pubspec_parse-1.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/pubspec_parse-1.5.0",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.6"
     },
     {
       "name": "rxdart",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/rxdart-0.27.7",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.27.7",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "scroll_to_index",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/scroll_to_index-2.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/scroll_to_index-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "scrollable_positioned_list_for_us",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/scrollable_positioned_list_for_us-0.4.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/scrollable_positioned_list_for_us-0.4.2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "shared_preferences",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences-2.5.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.5.3",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "shared_preferences_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_android-2.4.7",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_android-2.4.10",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.6"
     },
     {
       "name": "shared_preferences_foundation",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_foundation-2.5.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_foundation-2.5.4",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "shared_preferences_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_linux-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_linux-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "shared_preferences_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_platform_interface-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_platform_interface-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "shared_preferences_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_web-2.4.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_web-2.4.3",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "shared_preferences_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shared_preferences_windows-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_windows-2.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "shelf",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shelf-1.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shelf-1.4.2",
       "packageUri": "lib/",
-      "languageVersion": "2.17"
+      "languageVersion": "3.4"
     },
     {
       "name": "shelf_web_socket",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/shelf_web_socket-2.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/shelf_web_socket-3.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.5"
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///C:/Users/flipp/fvm/default/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Volumes/Anything/workspace/fvm/versions/3.29.3/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.7"
     },
     {
       "name": "source_span",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/source_span-1.10.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/source_span-1.10.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "sqflite",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/sqflite-2.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/sqflite-2.4.2",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "sqflite_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/sqflite_android-2.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/sqflite_android-2.4.1",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "sqflite_common",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/sqflite_common-2.5.4+6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/sqflite_common-2.5.5",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "sqflite_darwin",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/sqflite_darwin-2.4.1+1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/sqflite_darwin-2.4.2",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "sqflite_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/sqflite_platform_interface-2.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/sqflite_platform_interface-2.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "stack_trace",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/stack_trace-1.12.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/stack_trace-1.12.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "stream_channel",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/stream_channel-2.1.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/stream_channel-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "stream_transform",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/stream_transform-2.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/stream_transform-2.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "string_scanner",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/string_scanner-1.4.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/string_scanner-1.4.1",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "synchronized",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/synchronized-3.3.0+3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/synchronized-3.3.1",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "tencent_chat_i18n_tool",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tencent_chat_i18n_tool-2.3.8",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tencent_chat_i18n_tool-2.3.8",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "tencent_cloud_chat_sdk",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tencent_cloud_chat_sdk-8.6.7019+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tencent_cloud_chat_sdk-8.6.7019+5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "tencent_cloud_uikit_core",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tencent_cloud_uikit_core-1.7.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tencent_cloud_uikit_core-1.7.4",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "tencent_keyboard_visibility",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tencent_keyboard_visibility-1.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tencent_keyboard_visibility-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "tencent_super_tooltip",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tencent_super_tooltip-0.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tencent_super_tooltip-0.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "term_glyph",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/term_glyph-1.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/term_glyph-1.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "test_api",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/test_api-0.7.6",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/test_api-0.7.6",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "tim_ui_kit_sticker_plugin",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tim_ui_kit_sticker_plugin-4.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tim_ui_kit_sticker_plugin-4.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
     {
       "name": "timing",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/timing-1.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/timing-1.0.2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "transparent_image",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/transparent_image-2.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/transparent_image-2.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "tuple",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/tuple-2.0.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/tuple-2.0.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "typed_data",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/typed_data-1.4.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/typed_data-1.4.0",
       "packageUri": "lib/",
       "languageVersion": "3.5"
     },
     {
       "name": "universal_html",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/universal_html-2.2.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/universal_html-2.2.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "universal_io",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/universal_io-2.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/universal_io-2.2.2",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
     {
       "name": "url_launcher",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher-6.3.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher-6.3.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "url_launcher_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_android-6.3.14",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_android-6.3.16",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.6"
     },
     {
       "name": "url_launcher_ios",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_ios-6.3.3",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "url_launcher_linux",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_linux-3.2.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_linux-3.2.1",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "url_launcher_macos",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_macos-3.2.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-3.2.2",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "url_launcher_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_platform_interface-2.3.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_platform_interface-2.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "url_launcher_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_web-2.3.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_web-2.4.1",
       "packageUri": "lib/",
-      "languageVersion": "3.3"
+      "languageVersion": "3.6"
     },
     {
       "name": "url_launcher_windows",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/url_launcher_windows-3.1.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_windows-3.1.4",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "uuid",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/uuid-3.0.7",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/uuid-3.0.7",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "vector_graphics",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/vector_graphics-1.1.18",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/vector_graphics-1.1.19",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "vector_graphics_codec",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/vector_graphics_codec-1.1.13",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/vector_graphics_codec-1.1.13",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "vector_graphics_compiler",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/vector_graphics_compiler-1.1.16",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/vector_graphics_compiler-1.1.17",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "vector_math",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/vector_math-2.1.4",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/vector_math-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.14"
     },
     {
       "name": "video_player",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/video_player-2.9.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/video_player-2.10.0",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "video_player_android",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/video_player_android-2.7.16",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/video_player_android-2.8.7",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "video_player_avfoundation",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.7.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/video_player_avfoundation-2.7.2",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "video_player_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/video_player_platform_interface-6.3.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/video_player_platform_interface-6.4.0",
       "packageUri": "lib/",
-      "languageVersion": "3.4"
+      "languageVersion": "3.6"
     },
     {
       "name": "video_player_web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/video_player_web-2.3.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/video_player_web-2.3.5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "visibility_detector",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/visibility_detector-0.4.0+2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/visibility_detector-0.4.0+2",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "wakelock_plus",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/wakelock_plus-1.3.2",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/wakelock_plus-1.3.2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "wakelock_plus_platform_interface",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/wakelock_plus_platform_interface-1.2.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/wakelock_plus_platform_interface-1.2.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "watcher",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/watcher-1.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/watcher-1.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.1"
     },
     {
       "name": "web",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/web-1.1.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/web-1.1.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "web_socket",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/web_socket-1.0.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/web_socket-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "web_socket_channel",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/web_socket_channel-3.0.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/web_socket_channel-3.0.3",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "wechat_assets_picker",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/wechat_assets_picker-9.5.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/wechat_assets_picker-9.5.1",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "wechat_picker_library",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/wechat_picker_library-1.0.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/wechat_picker_library-1.0.5",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "win32",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/win32-5.10.1",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/win32-5.13.0",
       "packageUri": "lib/",
-      "languageVersion": "3.5"
+      "languageVersion": "3.7"
     },
     {
       "name": "win32_registry",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/win32_registry-1.1.5",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/win32_registry-1.1.5",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
     {
       "name": "xdg_directories",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/xdg_directories-1.1.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/xdg_directories-1.1.0",
       "packageUri": "lib/",
       "languageVersion": "3.3"
     },
     {
       "name": "xml",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/xml-6.5.0",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/xml-6.5.0",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "yaml",
-      "rootUri": "file:///C:/Users/flipp/AppData/Local/Pub/Cache/hosted/pub.flutter-io.cn/yaml-3.1.3",
+      "rootUri": "file:///Users/flipped/.pub-cache/hosted/pub.flutter-io.cn/yaml-3.1.3",
       "packageUri": "lib/",
       "languageVersion": "3.4"
     },
@@ -1340,10 +1334,10 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2025-06-09T09:32:38.808932Z",
+  "generated": "2025-07-01T14:51:02.276106Z",
   "generator": "pub",
-  "generatorVersion": "3.5.4",
-  "flutterRoot": "file:///C:/Users/flipp/fvm/default",
-  "flutterVersion": "3.24.4",
-  "pubCache": "file:///C:/Users/flipp/AppData/Local/Pub/Cache"
+  "generatorVersion": "3.7.2",
+  "flutterRoot": "file:///Volumes/Anything/workspace/fvm/versions/3.29.3",
+  "flutterVersion": "3.29.3",
+  "pubCache": "file:///Users/flipped/.pub-cache"
 }
