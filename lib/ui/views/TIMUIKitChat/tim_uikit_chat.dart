@@ -406,7 +406,6 @@ class _TUIChatState extends TIMUIKitState<TIMUIKitChat> {
     final isBuild = isInit;
     isInit = true;
     _updateJoinInGroupCallWidget();
-
     return TIMUIKitChatProviderScope(
         model: model,
         groupID: widget.groupID,
@@ -763,7 +762,9 @@ class TIMUIKitChatProviderScope extends StatelessWidget {
         ...?providers
       ],
       child: child,
-      builder: (context, w) => builder(context, model!, w),
+      builder: (context, w) {
+        return builder(context, model!, w);
+      },
     );
   }
 }

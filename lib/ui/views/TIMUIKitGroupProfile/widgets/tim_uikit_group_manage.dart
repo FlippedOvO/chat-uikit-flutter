@@ -10,21 +10,21 @@ import 'package:tencent_cloud_chat_sdk/enum/group_type.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_group_member_full_info.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_group_member_full_info.dart';
 import 'package:tencent_cloud_chat_sdk/tencent_im_sdk_plugin.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_callback.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_group_profile_model.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/core/tim_uikit_wide_modal_operation_key.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/services_locatar.dart';
+import 'package:tencent_cloud_chat_uikit/theme/color.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitProfile/widget/tim_uikit_operation_item.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/avatar.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/column_menu.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/radio_button.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/wide_popup.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_callback.dart';
-import 'package:tencent_cloud_chat_uikit/theme/color.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme_view_model.dart';
 
 GlobalKey<_GroupProfileAddAdminState> groupProfileAddAdminKey = GlobalKey();
 
@@ -35,13 +35,15 @@ class GroupProfileGroupManage extends StatefulWidget {
   State<StatefulWidget> createState() => GroupProfileGroupManageState();
 }
 
-class GroupProfileGroupManageState extends TIMUIKitState<GroupProfileGroupManage> {
+class GroupProfileGroupManageState
+    extends TIMUIKitState<GroupProfileGroupManage> {
   bool isShowManageBox = false;
 
   @override
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
     final TUITheme theme = value.theme;
-    final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+    final isDesktopScreen =
+        TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
     final model = Provider.of<TUIGroupProfileModel>(context);
 
     return Container(
@@ -50,12 +52,17 @@ class GroupProfileGroupManageState extends TIMUIKitState<GroupProfileGroupManage
           color: Colors.white,
           border: isDesktopScreen
               ? null
-              : Border(bottom: BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
+              : Border(
+                  bottom: BorderSide(
+                      color: theme.weakDividerColor ??
+                          CommonColor.weakDividerColor))),
       child: Column(
         children: [
           InkWell(
             onTap: () {
-              final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+              final isDesktopScreen =
+                  TUIKitScreenUtils.getFormFactor(context) ==
+                      DeviceType.Desktop;
               if (!isDesktopScreen) {
                 Navigator.push(
                     context,
@@ -74,12 +81,15 @@ class GroupProfileGroupManageState extends TIMUIKitState<GroupProfileGroupManage
               children: [
                 Text(
                   TIM_t("群管理"),
-                  style: TextStyle(fontSize: isDesktopScreen ? 14 : 16, color: theme.darkTextColor),
+                  style: TextStyle(
+                      fontSize: isDesktopScreen ? 14 : 16,
+                      color: theme.darkTextColor),
                 ),
                 AnimatedRotation(
                   turns: isShowManageBox ? 0.25 : 0,
                   duration: const Duration(milliseconds: 200),
-                  child: Icon(Icons.keyboard_arrow_right, color: theme.weakTextColor),
+                  child: Icon(Icons.keyboard_arrow_right,
+                      color: theme.weakTextColor),
                 )
               ],
             ),
@@ -107,7 +117,8 @@ class GroupProfileGroupManagePage extends StatefulWidget {
   State<StatefulWidget> createState() => _GroupProfileGroupManagePageState();
 }
 
-class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupManagePage> {
+class _GroupProfileGroupManagePageState
+    extends TIMUIKitState<GroupProfileGroupManagePage> {
   int? serverTime;
 
   @override
@@ -128,14 +139,18 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
     return MultiProvider(
         providers: [
           ChangeNotifierProvider.value(value: widget.model),
-          ChangeNotifierProvider.value(value: serviceLocator<TUIThemeViewModel>())
+          ChangeNotifierProvider.value(
+              value: serviceLocator<TUIThemeViewModel>())
         ],
         builder: (context, w) {
-          final memberList = Provider.of<TUIGroupProfileModel>(context).groupMemberList;
+          final memberList =
+              Provider.of<TUIGroupProfileModel>(context).groupMemberList;
           final theme = Provider.of<TUIThemeViewModel>(context).theme;
           final isAllMuted = widget.model.groupInfo?.isAllMuted ?? false;
-          final bool isAllowMuteMember = (widget.model.groupInfo?.groupType ?? "") != GroupType.Work;
-          final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+          final bool isAllowMuteMember =
+              (widget.model.groupInfo?.groupType ?? "") != GroupType.Work;
+          final isDesktopScreen =
+              TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
 
           Widget managePage() {
             return Column(
@@ -150,7 +165,10 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                       color: Colors.white,
                       border: isDesktopScreen
                           ? null
-                          : Border(bottom: BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
+                          : Border(
+                              bottom: BorderSide(
+                                  color: theme.weakDividerColor ??
+                                      CommonColor.weakDividerColor))),
                   child: InkWell(
                     onTap: isDesktopScreen
                         ? null
@@ -158,7 +176,8 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => GroupProfileSetManagerPage(
+                                  builder: (context) =>
+                                      GroupProfileSetManagerPage(
                                     model: widget.model,
                                   ),
                                 ));
@@ -167,15 +186,21 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(TIM_t("群管理员"), style: TextStyle(fontSize: 14, color: theme.darkTextColor)),
+                              Text(TIM_t("群管理员"),
+                                  style: TextStyle(
+                                      fontSize: 14,
+                                      color: theme.darkTextColor)),
                             ],
                           )
                         : Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text(TIM_t("设置管理员"),
-                                  style: TextStyle(fontSize: isDesktopScreen ? 14 : 16, color: theme.darkTextColor)),
-                              Icon(Icons.keyboard_arrow_right, color: theme.weakTextColor)
+                                  style: TextStyle(
+                                      fontSize: isDesktopScreen ? 14 : 16,
+                                      color: theme.darkTextColor)),
+                              Icon(Icons.keyboard_arrow_right,
+                                  color: theme.weakTextColor)
                             ],
                           ),
                   ),
@@ -186,17 +211,21 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                   ),
                 if (!isDesktopScreen)
                   Container(
-                    padding: const EdgeInsets.only(top: 12, left: 16, bottom: 12, right: 12),
+                    padding: const EdgeInsets.only(
+                        top: 12, left: 16, bottom: 12, right: 12),
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        border:
-                            Border(bottom: BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: theme.weakDividerColor ??
+                                    CommonColor.weakDividerColor))),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           TIM_t("全员禁言"),
-                          style: TextStyle(fontSize: 16, color: theme.darkTextColor),
+                          style: TextStyle(
+                              fontSize: 16, color: theme.darkTextColor),
                         ),
                         CupertinoSwitch(
                             value: isAllMuted,
@@ -211,7 +240,9 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(TIM_t("禁言"), style: TextStyle(fontSize: 14, color: theme.darkTextColor)),
+                      Text(TIM_t("禁言"),
+                          style: TextStyle(
+                              fontSize: 14, color: theme.darkTextColor)),
                     ],
                   ),
                 if (isDesktopScreen)
@@ -231,12 +262,14 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                   ),
                 if (!isDesktopScreen)
                   Container(
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 16),
                     color: theme.weakBackgroundColor,
                     alignment: Alignment.topLeft,
                     child: Text(
                       TIM_t("全员禁言开启后，只允许群主和管理员发言。"),
-                      style: TextStyle(fontSize: 12, color: theme.weakTextColor),
+                      style:
+                          TextStyle(fontSize: 12, color: theme.weakTextColor),
                     ),
                   ),
                 if (!isAllMuted && isAllowMuteMember)
@@ -257,8 +290,9 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                               : BoxDecoration(
                                   color: Colors.white,
                                   border: Border(
-                                      bottom:
-                                          BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
+                                      bottom: BorderSide(
+                                          color: theme.weakDividerColor ??
+                                              CommonColor.weakDividerColor))),
                           child: Row(
                             children: [
                               Icon(
@@ -279,15 +313,21 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                           key: groupProfileAddAdminKey,
                           appbarTitle: TIM_t("设置禁言"),
                           memberList: memberList.where((element) {
-                            final isMute = (serverTime != null ? (element?.muteUntil ?? 0) > serverTime! : false);
-                            final isMember = element!.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_MEMBER;
+                            final isMute = (serverTime != null
+                                ? (element?.muteUntil ?? 0) > serverTime!
+                                : false);
+                            final isMember = element!.role ==
+                                GroupMemberRoleType
+                                    .V2TIM_GROUP_MEMBER_ROLE_MEMBER;
                             return !isMute && isMember;
                           }).toList(),
-                          selectCompletedHandler: (context, selectedMember) async {
+                          selectCompletedHandler:
+                              (context, selectedMember) async {
                             if (selectedMember.isNotEmpty) {
                               for (var member in selectedMember) {
                                 final userID = member!.userID;
-                                widget.model.muteGroupMember(userID, true, serverTime);
+                                widget.model
+                                    .muteGroupMember(userID, true, serverTime);
                               }
                             }
                           },
@@ -306,31 +346,48 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                             },
                             child: (onClose) => muteMember());
                       } else {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => muteMember()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => muteMember()));
                       }
                     },
                   ),
                 if (!isAllMuted && isAllowMuteMember)
                   ...memberList
-                      .where((element) => (serverTime != null ? (element?.muteUntil ?? 0) > serverTime! : false))
+                      .where((element) => (serverTime != null
+                          ? (element?.muteUntil ?? 0) > serverTime!
+                          : false))
                       .map((e) => Container(
-                            padding: isDesktopScreen ? const EdgeInsets.only(left: 16) : null,
+                            padding: isDesktopScreen
+                                ? const EdgeInsets.only(left: 16)
+                                : null,
                             child: GestureDetector(
                               onSecondaryTapDown: (details) {
                                 TUIKitWidePopup.showPopupWindow(
-                                    operationKey: TUIKitWideModalOperationKey.setUnmute,
+                                    operationKey:
+                                        TUIKitWideModalOperationKey.setUnmute,
                                     isDarkBackground: false,
-                                    borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(4)),
                                     context: context,
                                     offset: Offset(
-                                        min(details.globalPosition.dx, MediaQuery.of(context).size.width - 80),
+                                        min(
+                                            details.globalPosition.dx,
+                                            MediaQuery.of(context).size.width -
+                                                80),
                                         details.globalPosition.dy),
                                     child: (onClose) => TUIKitColumnMenu(data: [
                                           ColumnMenuItem(
                                               label: TIM_t("删除"),
-                                              icon: const Icon(Icons.remove_circle_outline, size: 16),
+                                              icon: const Icon(
+                                                  Icons.remove_circle_outline,
+                                                  size: 16),
                                               onClick: () {
-                                                widget.model.muteGroupMember(e.userID, false, serverTime);
+                                                widget.model.muteGroupMember(
+                                                    e.userID,
+                                                    false,
+                                                    serverTime);
                                                 onClose();
                                               }),
                                         ]));
@@ -338,17 +395,21 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                               child: _buildListItem(
                                   context,
                                   e!,
-                                  ActionPane(motion: const DrawerMotion(), children: [
-                                    SlidableAction(
-                                      onPressed: (_) {
-                                        widget.model.muteGroupMember(e.userID, false, serverTime);
-                                      },
-                                      flex: 1,
-                                      backgroundColor: theme.cautionColor ?? CommonColor.cautionColor,
-                                      autoClose: true,
-                                      label: TIM_t("删除"),
-                                    )
-                                  ])),
+                                  ActionPane(
+                                      motion: const DrawerMotion(),
+                                      children: [
+                                        SlidableAction(
+                                          onPressed: (_) {
+                                            widget.model.muteGroupMember(
+                                                e.userID, false, serverTime);
+                                          },
+                                          flex: 1,
+                                          backgroundColor: theme.cautionColor ??
+                                              CommonColor.cautionColor,
+                                          autoClose: true,
+                                          label: TIM_t("删除"),
+                                        )
+                                      ])),
                             ),
                           ))
                       .toList()
@@ -363,13 +424,15 @@ class _GroupProfileGroupManagePageState extends TIMUIKitState<GroupProfileGroupM
                 appBar: AppBar(
                   title: Text(
                     TIM_t("群管理"),
-                    style: TextStyle(color: theme.appbarTextColor, fontSize: 17),
+                    style:
+                        TextStyle(color: theme.appbarTextColor, fontSize: 17),
                   ),
                   backgroundColor: theme.appbarBgColor ?? theme.primaryColor,
                   shadowColor: theme.weakDividerColor,
                   iconTheme: IconThemeData(
                     color: theme.appbarTextColor,
                   ),
+                  elevation: 0,
                   leading: IconButton(
                     padding: const EdgeInsets.only(left: 16),
                     constraints: const BoxConstraints(),
@@ -408,9 +471,11 @@ _getShowName(V2TimGroupMemberFullInfo? item) {
               : userID;
 }
 
-Widget _buildListItem(BuildContext context, V2TimGroupMemberFullInfo memberInfo, ActionPane? endActionPane) {
+Widget _buildListItem(BuildContext context, V2TimGroupMemberFullInfo memberInfo,
+    ActionPane? endActionPane) {
   final theme = Provider.of<TUIThemeViewModel>(context).theme;
-  final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+  final isDesktopScreen =
+      TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
 
   Widget nameItem() {
     return Container(
@@ -429,12 +494,19 @@ Widget _buildListItem(BuildContext context, V2TimGroupMemberFullInfo memberInfo,
           ),
           title: Row(
             children: [
-              Text(_getShowName(memberInfo), style: TextStyle(fontSize: isDesktopScreen ? 14 : 16)),
+              Text(_getShowName(memberInfo),
+                  style: TextStyle(fontSize: isDesktopScreen ? 14 : 16)),
             ],
           ),
           onTap: () {},
         ),
-        if (!isDesktopScreen) Divider(thickness: 1, indent: 74, endIndent: 0, color: theme.weakDividerColor, height: 0)
+        if (!isDesktopScreen)
+          Divider(
+              thickness: 1,
+              indent: 74,
+              endIndent: 0,
+              color: theme.weakDividerColor,
+              height: 0)
       ]),
     );
   }
@@ -442,32 +514,47 @@ Widget _buildListItem(BuildContext context, V2TimGroupMemberFullInfo memberInfo,
   return TUIKitScreenUtils.getDeviceWidget(
       context: context,
       desktopWidget: nameItem(),
-      defaultWidget: SingleChildScrollView(child: Slidable(endActionPane: endActionPane, child: nameItem())));
+      defaultWidget: SingleChildScrollView(
+          child: Slidable(endActionPane: endActionPane, child: nameItem())));
 }
 
 /// 选择管理员
 class GroupProfileSetManagerPage extends StatefulWidget {
   final TUIGroupProfileModel model;
 
-  const GroupProfileSetManagerPage({Key? key, required this.model}) : super(key: key);
+  const GroupProfileSetManagerPage({Key? key, required this.model})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _GroupProfileSetManagerPageState();
 }
 
-class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetManagerPage> {
-  List<V2TimGroupMemberFullInfo?> _getAdminMemberList(List<V2TimGroupMemberFullInfo?> memberList) {
-    return memberList.where((member) => member?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_ADMIN).toList();
+class _GroupProfileSetManagerPageState
+    extends TIMUIKitState<GroupProfileSetManagerPage> {
+  List<V2TimGroupMemberFullInfo?> _getAdminMemberList(
+      List<V2TimGroupMemberFullInfo?> memberList) {
+    return memberList
+        .where((member) =>
+            member?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_ADMIN)
+        .toList();
   }
 
-  List<V2TimGroupMemberFullInfo?> _getOwnerList(List<V2TimGroupMemberFullInfo?> memberList) {
-    return memberList.where((member) => member?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_OWNER).toList();
+  List<V2TimGroupMemberFullInfo?> _getOwnerList(
+      List<V2TimGroupMemberFullInfo?> memberList) {
+    return memberList
+        .where((member) =>
+            member?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_OWNER)
+        .toList();
   }
 
-  _removeAdmin(BuildContext context, V2TimGroupMemberFullInfo memberFullInfo) async {
+  _removeAdmin(
+      BuildContext context, V2TimGroupMemberFullInfo memberFullInfo) async {
     final res = await widget.model.setMemberToNormal(memberFullInfo.userID);
     if (res.code == 0) {
-      onTIMCallback(TIMCallback(type: TIMCallbackType.INFO, infoRecommendText: TIM_t("成功取消管理员身份"), infoCode: 6661003));
+      onTIMCallback(TIMCallback(
+          type: TIMCallbackType.INFO,
+          infoRecommendText: TIM_t("成功取消管理员身份"),
+          infoCode: 6661003));
     }
   }
 
@@ -483,7 +570,8 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
         final adminList = _getAdminMemberList(memberList);
         final ownerList = _getOwnerList(memberList);
         final String option2 = adminList.length.toString();
-        final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+        final isDesktopScreen =
+            TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
 
         Widget adminPage() {
           return SingleChildScrollView(
@@ -493,7 +581,8 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                 Container(
                   alignment: Alignment.topLeft,
                   color: theme.weakDividerColor,
-                  padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
                   child: Text(
                     TIM_t("群主"),
                     style: TextStyle(fontSize: 14, color: theme.weakTextColor),
@@ -511,7 +600,9 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
               ...ownerList
                   .map(
                     (e) => Container(
-                      padding: isDesktopScreen ? const EdgeInsets.only(left: 16) : null,
+                      padding: isDesktopScreen
+                          ? const EdgeInsets.only(left: 16)
+                          : null,
                       child: _buildListItem(context, e!, null),
                     ),
                   )
@@ -520,9 +611,11 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                 Container(
                   alignment: Alignment.topLeft,
                   color: theme.weakDividerColor,
-                  padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 6, horizontal: 16),
                   child: Text(
-                    TIM_t_para("管理员 ({{option2}}/10)", "管理员 ($option2/10)")(option2: option2),
+                    TIM_t_para("管理员 ({{option2}}/10)", "管理员 ($option2/10)")(
+                        option2: option2),
                     style: TextStyle(fontSize: 14, color: theme.weakTextColor),
                   ),
                 ),
@@ -531,7 +624,8 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                   alignment: Alignment.topLeft,
                   padding: const EdgeInsets.only(top: 10, bottom: 4, left: 16),
                   child: Text(
-                    TIM_t_para("管理员 ({{option2}}/10)", "管理员 ($option2/10)")(option2: option2),
+                    TIM_t_para("管理员 ({{option2}}/10)", "管理员 ($option2/10)")(
+                        option2: option2),
                     style: TextStyle(fontSize: 14, color: theme.primaryColor),
                   ),
                 ),
@@ -548,7 +642,9 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                           : BoxDecoration(
                               color: Colors.white,
                               border: Border(
-                                  bottom: BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
+                                  bottom: BorderSide(
+                                      color: theme.weakDividerColor ??
+                                          CommonColor.weakDividerColor))),
                       child: Row(
                         children: [
                           Icon(
@@ -577,11 +673,14 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                         child: (onClose) => GroupProfileAddAdmin(
                               key: groupProfileAddAdminKey,
                               memberList: memberList
-                                  .where(
-                                      (element) => element?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_MEMBER)
+                                  .where((element) =>
+                                      element?.role ==
+                                      GroupMemberRoleType
+                                          .V2TIM_GROUP_MEMBER_ROLE_MEMBER)
                                   .toList(),
                               appbarTitle: TIM_t("设置管理员"),
-                              selectCompletedHandler: (context, selectedMember) async {
+                              selectCompletedHandler:
+                                  (context, selectedMember) async {
                                 if (selectedMember.isNotEmpty) {
                                   for (var member in selectedMember) {
                                     final userID = member!.userID;
@@ -598,10 +697,13 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                                   key: groupProfileAddAdminKey,
                                   memberList: memberList
                                       .where((element) =>
-                                          element?.role == GroupMemberRoleType.V2TIM_GROUP_MEMBER_ROLE_MEMBER)
+                                          element?.role ==
+                                          GroupMemberRoleType
+                                              .V2TIM_GROUP_MEMBER_ROLE_MEMBER)
                                       .toList(),
                                   appbarTitle: TIM_t("设置管理员"),
-                                  selectCompletedHandler: (context, selectedMember) async {
+                                  selectCompletedHandler:
+                                      (context, selectedMember) async {
                                     if (selectedMember.isNotEmpty) {
                                       for (var member in selectedMember) {
                                         final userID = member!.userID;
@@ -617,16 +719,22 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                   .map((e) => GestureDetector(
                         onSecondaryTapDown: (details) {
                           TUIKitWidePopup.showPopupWindow(
-                              operationKey: TUIKitWideModalOperationKey.deleteAdmin,
+                              operationKey:
+                                  TUIKitWideModalOperationKey.deleteAdmin,
                               isDarkBackground: false,
-                              borderRadius: const BorderRadius.all(Radius.circular(4)),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(4)),
                               context: context,
-                              offset: Offset(min(details.globalPosition.dx, MediaQuery.of(context).size.width - 80),
+                              offset: Offset(
+                                  min(details.globalPosition.dx,
+                                      MediaQuery.of(context).size.width - 80),
                                   details.globalPosition.dy),
                               child: (onClose) => TUIKitColumnMenu(data: [
                                     ColumnMenuItem(
                                         label: TIM_t("删除"),
-                                        icon: const Icon(Icons.remove_circle_outline, size: 16),
+                                        icon: const Icon(
+                                            Icons.remove_circle_outline,
+                                            size: 16),
                                         onClick: () {
                                           _removeAdmin(context, e);
                                           onClose();
@@ -634,21 +742,26 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
                                   ]));
                         },
                         child: Container(
-                          padding: isDesktopScreen ? const EdgeInsets.only(left: 16) : null,
+                          padding: isDesktopScreen
+                              ? const EdgeInsets.only(left: 16)
+                              : null,
                           child: _buildListItem(
                               context,
                               e!,
-                              ActionPane(motion: const DrawerMotion(), children: [
-                                SlidableAction(
-                                  onPressed: (_) {
-                                    _removeAdmin(context, e);
-                                  },
-                                  flex: 1,
-                                  backgroundColor: theme.cautionColor ?? CommonColor.cautionColor,
-                                  autoClose: true,
-                                  label: TIM_t("删除"),
-                                )
-                              ])),
+                              ActionPane(
+                                  motion: const DrawerMotion(),
+                                  children: [
+                                    SlidableAction(
+                                      onPressed: (_) {
+                                        _removeAdmin(context, e);
+                                      },
+                                      flex: 1,
+                                      backgroundColor: theme.cautionColor ??
+                                          CommonColor.cautionColor,
+                                      autoClose: true,
+                                      label: TIM_t("删除"),
+                                    )
+                                  ])),
                         ),
                       ))
                   .toList(),
@@ -682,10 +795,15 @@ class _GroupProfileSetManagerPageState extends TIMUIKitState<GroupProfileSetMana
 class GroupProfileAddAdmin extends StatefulWidget {
   final List<V2TimGroupMemberFullInfo?> memberList;
   final String appbarTitle;
-  final void Function(BuildContext context, List<V2TimGroupMemberFullInfo?> selectedMemberList)? selectCompletedHandler;
+  final void Function(BuildContext context,
+          List<V2TimGroupMemberFullInfo?> selectedMemberList)?
+      selectCompletedHandler;
 
   const GroupProfileAddAdmin(
-      {Key? key, required this.memberList, this.selectCompletedHandler, required this.appbarTitle})
+      {Key? key,
+      required this.memberList,
+      this.selectCompletedHandler,
+      required this.appbarTitle})
       : super(key: key);
 
   @override
@@ -722,9 +840,12 @@ class _GroupProfileAddAdminState extends TIMUIKitState<GroupProfileAddAdmin> {
               .map((e) => Container(
                     decoration: BoxDecoration(
                         color: Colors.white,
-                        border:
-                            Border(bottom: BorderSide(color: theme.weakDividerColor ?? CommonColor.weakDividerColor))),
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: theme.weakDividerColor ??
+                                    CommonColor.weakDividerColor))),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 16),
                     child: InkWell(
                       onTap: () {
                         final isChecked = selectedMemberList.contains(e);
@@ -756,7 +877,8 @@ class _GroupProfileAddAdminState extends TIMUIKitState<GroupProfileAddAdmin> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text(_getShowName(e), style: const TextStyle(fontSize: 16))
+                          Text(_getShowName(e),
+                              style: const TextStyle(fontSize: 16))
                         ],
                       ),
                     ),

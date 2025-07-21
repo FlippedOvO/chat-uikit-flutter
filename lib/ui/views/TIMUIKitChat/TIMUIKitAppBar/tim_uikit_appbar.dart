@@ -6,18 +6,18 @@ import 'package:tencent_chat_i18n_tool/tencent_chat_i18n_tool.dart';
 import 'package:tencent_cloud_chat_sdk/enum/V2TimFriendshipListener.dart';
 import 'package:tencent_cloud_chat_sdk/enum/V2TimGroupListener.dart';
 import 'package:tencent_cloud_chat_sdk/enum/group_change_info_type.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_chat_global_model.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/friendShip/friendship_services.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/group/group_services.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/services_locatar.dart';
+import 'package:tencent_cloud_chat_uikit/theme/color.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitAppBar/tim_uikit_appbar_title.dart';
 import 'package:tuple/tuple.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
-import 'package:tencent_cloud_chat_uikit/theme/color.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 
 class TIMUIKitAppBar extends StatefulWidget implements PreferredSizeWidget {
   /// Appbar config
@@ -183,17 +183,17 @@ class _TIMUIKitAppBarState extends TIMUIKitState<TIMUIKitAppBar> {
           theme.primaryColor,
       actionsIconTheme: setAppbar?.actionsIconTheme,
       foregroundColor: setAppbar?.foregroundColor,
-      elevation: setAppbar?.elevation ?? (isDesktopScreen ? 0 : 1),
+      elevation: setAppbar?.elevation ?? 0,
       bottom: setAppbar?.bottom,
       bottomOpacity: setAppbar?.bottomOpacity ?? 1.0,
       titleSpacing: setAppbar?.titleSpacing,
       automaticallyImplyLeading: setAppbar?.automaticallyImplyLeading ?? false,
-      shadowColor: setAppbar?.shadowColor ?? theme.weakDividerColor,
       excludeHeaderSemantics: setAppbar?.excludeHeaderSemantics ?? false,
       toolbarHeight: setAppbar?.toolbarHeight,
       titleTextStyle: setAppbar?.titleTextStyle,
       toolbarOpacity: setAppbar?.toolbarOpacity ?? 1.0,
       toolbarTextStyle: setAppbar?.toolbarTextStyle,
+      scrolledUnderElevation: 0,
 
       // textTheme: setAppbar?.textTheme,
       iconTheme: setAppbar?.iconTheme ??

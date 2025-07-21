@@ -33,5 +33,7 @@ class CommonColor {
     adminColor: Colors.blue,
     inputFillColor: Color.fromARGB(0, 242, 243, 245),
     textgrey: Color(0xFFAEA4A3),
+    appbarBgColor: Color(0xffebf0f6),
+    appbarTextColor: Color(0xff333333),
   );
 }

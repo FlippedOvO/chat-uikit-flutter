@@ -204,7 +204,7 @@ class _TIMUIKitLastMsgState extends TIMUIKitState<TIMUIKitLastMsg> {
   String _senderName() {
     if (widget.lastMsg?.groupID == null) return "";
     if (widget.lastMsg?.isSelf ?? false) {
-      return "${TIM_t("您")}\r\n";
+      return TIM_t("您");
     }
 
     final nickname = widget.lastMsg?.senderProfile?.nickName == null ||
@@ -212,7 +212,7 @@ class _TIMUIKitLastMsgState extends TIMUIKitState<TIMUIKitLastMsg> {
         ? widget.lastMsg?.sender ?? ""
         : "${widget.lastMsg?.senderProfile?.nickName}";
 
-    return nickname.isEmpty ? "" : "$nickname\r\n";
+    return nickname.isEmpty ? "" : nickname;
   }
 
   @override
@@ -222,6 +222,7 @@ class _TIMUIKitLastMsgState extends TIMUIKitState<TIMUIKitLastMsg> {
     final TUITheme theme = value.theme;
     final icon = _getIconByMsgStatus(context);
     String disturbUnreadCountInfo = _getDisturbUnreadCountInfo();
+    final String senderName = _senderName();
     return Row(children: [
       if (icon != null)
         Container(
@@ -261,20 +262,36 @@ class _TIMUIKitLastMsgState extends TIMUIKitState<TIMUIKitLastMsg> {
           widget.draftText == "" &&
               TencentUtils.checkString(groupTipsAbstractText) != null)
         Expanded(
-          child: ExtendedText("${_senderName()}$groupTipsAbstractText",
-              softWrap: true,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                height: 1.2,
-                color: theme.weakTextColor,
-                fontSize: widget.fontSize,
-              ),
-              specialTextSpanBuilder: DefaultSpecialTextSpanBuilder(
-                isUseQQPackage: true,
-                isUseTencentCloudChatPackage: true,
-                showAtBackground: true,
-              )),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (senderName.isNotEmpty)
+                Text(
+                  senderName,
+                  maxLines: 1,
+                  style: TextStyle(
+                    height: 1.2,
+                    color: theme.textColor,
+                    fontSize: widget.fontSize,
+                  ),
+                ),
+              ExtendedText(groupTipsAbstractText,
+                  softWrap: true,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    height: 1,
+                    color: theme.weakTextColor,
+                    fontSize: widget.fontSize,
+                  ),
+                  specialTextSpanBuilder: DefaultSpecialTextSpanBuilder(
+                    isUseQQPackage: true,
+                    isUseTencentCloudChatPackage: true,
+                    showAtBackground: true,
+                  )),
+            ],
+          ),
         )
     ]);
   }

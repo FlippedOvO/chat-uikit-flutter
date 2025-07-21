@@ -169,7 +169,6 @@ class _TIMUIKitHistoryMessageListContainerState
     final chatConfig = Provider.of<TIMUIKitChatConfig>(context);
     final TUIChatSeparateViewModel model =
         Provider.of<TUIChatSeparateViewModel>(context, listen: false);
-
     return TIMUIKitHistoryMessageListSelector(
       conversationID: model.conversationID,
       builder: (context, messageList, child) {

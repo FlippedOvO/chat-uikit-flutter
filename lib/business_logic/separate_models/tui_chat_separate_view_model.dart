@@ -353,7 +353,6 @@ class TUIChatSeparateViewModel extends ChangeNotifier {
   }) async {
     List<V2TimMessage> msgList = [];
     bool tempHaveMoreData = false;
-
     final previousResponse =
         await _messageService.getHistoryMessageListWithComplete(
             count: 20,
@@ -405,7 +404,7 @@ class TUIChatSeparateViewModel extends ChangeNotifier {
 
       // 获取当前聊天对话的历史消息列表
       final currentRecordList = globalModel.messageListMap[conversationID];
-
+      print("ddd==loadMsgId=$lastMsgID");
       // 调用MessageService获取聊天记录
       final response = await _messageService.getHistoryMessageListWithComplete(
         count: count,
@@ -463,6 +462,9 @@ class TUIChatSeparateViewModel extends ChangeNotifier {
                 ?.didGetHistoricalMessageList(response.messageList) ??
             response.messageList;
         globalModel.loadingMessage.remove(conversationID);
+        print(
+            "ddd==loadBefore${globalModel.messageListMap[conversationID]!.length}");
+        print("ddd==loadFinished${receivedList.length}");
 
         // 更新聊天记录到全局model
         globalModel.setMessageList(
@@ -470,6 +472,8 @@ class TUIChatSeparateViewModel extends ChangeNotifier {
           receivedList,
           needResetNewMessageCount: false,
         );
+        print(
+            "ddd==setAfter${globalModel.messageListMap[conversationID]!.length}");
       }
 
       // 获取已读未读状态

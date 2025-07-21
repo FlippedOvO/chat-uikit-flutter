@@ -252,10 +252,8 @@ class TUIChatGlobalModel extends ChangeNotifier implements TIMUIKitClass {
             0,
             max(
                 0,
-                min(
-                    10,
-                    ((_messageListMap[currentSelectedConv] ?? []).length -
-                        1))));
+                min(10,
+                    ((_messageListMap[currentSelectedConv] ?? []).length))));
     if (_currentConversationList.isNotEmpty) {
       _currentConversationList.removeLast();
     }
@@ -347,7 +345,7 @@ class TUIChatGlobalModel extends ChangeNotifier implements TIMUIKitClass {
     required String conversationID,
   }) async {
     final response = await _messageService.getHistoryMessageList(
-        count: 10,
+        count: 20,
         getType: HistoryMsgGetTypeEnum.V2TIM_GET_LOCAL_OLDER_MSG,
         userID: conversationType == ConvType.c2c ? conversationID : null,
         groupID: conversationType == ConvType.group ? conversationID : null);
@@ -1068,6 +1066,7 @@ class TUIChatGlobalModel extends ChangeNotifier implements TIMUIKitClass {
 
   void setMessageList(String conversationID, List<V2TimMessage> messageList,
       {bool needResetNewMessageCount = true, bool isDeleteMsg = false}) {
+    print("ddd==setList$conversationID, ${messageList.length}");
     _messageListMap[conversationID] = messageList;
     if (needResetNewMessageCount) {
       _receivedNewMessageCount = 0;
