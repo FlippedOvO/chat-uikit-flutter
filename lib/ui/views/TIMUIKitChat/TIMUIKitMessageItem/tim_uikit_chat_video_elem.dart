@@ -10,17 +10,18 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_video_elem.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_video_elem.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_callback.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
-import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_callback.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/message/message_services.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/services_locatar.dart';
+import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
 import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/message.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/platform.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitMessageItem/TIMUIKitMessageReaction/tim_uikit_message_reaction_wrapper.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitMessageItem/chat_time.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/video_screen.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/wide_popup.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -82,18 +83,21 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
       final current = (DateTime.now().millisecondsSinceEpoch / 1000).ceil();
       final timeStamp = widget.message.timestamp ?? current;
       if (current - timeStamp < 300) {
-        if (stateElement.snapshotPath != null && stateElement.snapshotPath != '') {
+        if (stateElement.snapshotPath != null &&
+            stateElement.snapshotPath != '') {
           File imgF = File(stateElement.snapshotPath!);
           bool isExist = imgF.existsSync();
           if (isExist) {
-            return Image.file(File(stateElement.snapshotPath!), fit: BoxFit.fitWidth);
+            return Image.file(File(stateElement.snapshotPath!),
+                fit: BoxFit.fitWidth);
           }
         }
       }
     }
 
     if ((stateElement.snapshotUrl == null || stateElement.snapshotUrl == '') &&
-        (stateElement.snapshotPath == null || stateElement.snapshotPath == '')) {
+        (stateElement.snapshotPath == null ||
+            stateElement.snapshotPath == '')) {
       return Container(
         decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(5)),
@@ -119,16 +123,22 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
             widget.message.status == MessageStatus.V2TIM_MSG_STATUS_SENDING)
         ? (stateElement.snapshotPath!.isNotEmpty
             ? Image.file(File(stateElement.snapshotPath!), fit: BoxFit.fitWidth)
-            : Image.file(File(stateElement.localSnapshotUrl!), fit: BoxFit.fitWidth))
-        : (PlatformUtils().isWeb || stateElement.localSnapshotUrl == null || stateElement.localSnapshotUrl == "")
+            : Image.file(File(stateElement.localSnapshotUrl!),
+                fit: BoxFit.fitWidth))
+        : (PlatformUtils().isWeb ||
+                stateElement.localSnapshotUrl == null ||
+                stateElement.localSnapshotUrl == "")
             ? Image.network(stateElement.snapshotUrl!, fit: BoxFit.fitWidth)
-            : Image.file(File(stateElement.localSnapshotUrl!), fit: BoxFit.fitWidth);
+            : Image.file(File(stateElement.localSnapshotUrl!),
+                fit: BoxFit.fitWidth);
   }
 
   downloadMessageDetailAndSave() async {
     if (TencentUtils.checkString(widget.message.msgID) != null) {
-      if (TencentUtils.checkString(widget.message.videoElem!.videoUrl) == null) {
-        final response = await _messageService.getMessageOnlineUrl(msgID: widget.message.msgID!);
+      if (TencentUtils.checkString(widget.message.videoElem!.videoUrl) ==
+          null) {
+        final response = await _messageService.getMessageOnlineUrl(
+            msgID: widget.message.msgID!);
         if (response.data != null) {
           widget.message.videoElem = response.data!.videoElem;
           Future.delayed(const Duration(microseconds: 10), () {
@@ -137,14 +147,24 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
         }
       }
       if (!PlatformUtils().isWeb) {
-        if (TencentUtils.checkString(widget.message.videoElem!.localVideoUrl) == null ||
+        if (TencentUtils.checkString(widget.message.videoElem!.localVideoUrl) ==
+                null ||
             !File(widget.message.videoElem!.localVideoUrl!).existsSync()) {
           _messageService.downloadMessage(
-              msgID: widget.message.msgID!, messageType: 5, imageType: 0, isSnapshot: false);
+              msgID: widget.message.msgID!,
+              messageType: 5,
+              imageType: 0,
+              isSnapshot: false);
         }
-        if (TencentUtils.checkString(widget.message.videoElem!.localSnapshotUrl) == null ||
+        if (TencentUtils.checkString(
+                    widget.message.videoElem!.localSnapshotUrl) ==
+                null ||
             !File(widget.message.videoElem!.localSnapshotUrl!).existsSync()) {
-          _messageService.downloadMessage(msgID: widget.message.msgID!, messageType: 5, imageType: 0, isSnapshot: true);
+          _messageService.downloadMessage(
+              msgID: widget.message.msgID!,
+              messageType: 5,
+              imageType: 0,
+              isSnapshot: true);
         }
       }
     }
@@ -173,7 +193,9 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
     return GestureDetector(
       onTap: () {
         if (PlatformUtils().isWeb) {
-          final url = widget.message.videoElem?.videoUrl ?? widget.message.videoElem?.videoPath ?? "";
+          final url = widget.message.videoElem?.videoUrl ??
+              widget.message.videoElem?.videoPath ??
+              "";
           TUIKitWidePopup.showMedia(
               context: context,
               mediaURL: url,
@@ -186,7 +208,8 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
         if (PlatformUtils().isDesktop) {
           final videoElem = widget.message.videoElem;
           if (videoElem != null) {
-            final localVideoUrl = TencentUtils.checkString(videoElem.localVideoUrl);
+            final localVideoUrl =
+                TencentUtils.checkString(videoElem.localVideoUrl);
             final videoPath = TencentUtils.checkString(videoElem.videoPath);
             final videoUrl = videoElem.videoUrl;
             if (localVideoUrl != null) {
@@ -204,8 +227,10 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
               //     mediaPath: videoPath,
               //     onClickOrigin: () => launchDesktopFile(videoPath));
             } else if (TencentUtils.isTextNotEmpty(videoUrl)) {
-              onTIMCallback(
-                  TIMCallback(infoCode: 6660414, infoRecommendText: TIM_t("正在下载中"), type: TIMCallbackType.INFO));
+              onTIMCallback(TIMCallback(
+                  infoCode: 6660414,
+                  infoRecommendText: TIM_t("正在下载中"),
+                  type: TIMCallbackType.INFO));
             }
           }
         } else {
@@ -230,55 +255,78 @@ class _TIMUIKitVideoElemState extends TIMUIKitState<TIMUIKitVideoElem> {
               isShowMessageReaction: widget.isShowMessageReaction ?? true,
               clearJump: widget.clearJump,
               isFromSelf: widget.message.isSelf ?? true,
-              child: ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(5)),
-                child: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
-                  double? positionRadio;
-                  if ((stateElement.snapshotWidth) != null &&
-                      stateElement.snapshotHeight != null &&
-                      stateElement.snapshotWidth != 0 &&
-                      stateElement.snapshotHeight != 0) {
-                    positionRadio = (stateElement.snapshotWidth! / stateElement.snapshotHeight!);
-                  }
-                  return ConstrainedBox(
-                      constraints: BoxConstraints(
-                          maxWidth: PlatformUtils().isWeb ? 300 : constraints.maxWidth * 0.5,
-                          maxHeight: min(constraints.maxHeight * 0.8, 300),
-                          minHeight: 20,
-                          minWidth: 20),
-                      child: Stack(
-                        children: <Widget>[
-                          if (positionRadio != null &&
-                              (stateElement.snapshotUrl != null || stateElement.snapshotUrl != null))
-                            AspectRatio(
-                              aspectRatio: positionRadio,
-                              child: Container(
-                                decoration: const BoxDecoration(color: Colors.transparent),
+              child: ChatTime(
+                timestamp: widget.message.timestamp,
+                color: theme.weakTextColor,
+                isSelf: widget.message.isSelf,
+                child: ClipRRect(
+                  borderRadius: const BorderRadius.all(Radius.circular(5)),
+                  child: LayoutBuilder(builder:
+                      (BuildContext context, BoxConstraints constraints) {
+                    double? positionRadio;
+                    if ((stateElement.snapshotWidth) != null &&
+                        stateElement.snapshotHeight != null &&
+                        stateElement.snapshotWidth != 0 &&
+                        stateElement.snapshotHeight != 0) {
+                      positionRadio = (stateElement.snapshotWidth! /
+                          stateElement.snapshotHeight!);
+                    }
+                    return ConstrainedBox(
+                        constraints: BoxConstraints(
+                            maxWidth: PlatformUtils().isWeb
+                                ? 300
+                                : constraints.maxWidth * 0.5,
+                            maxHeight: min(constraints.maxHeight * 0.8, 300),
+                            minHeight: 20,
+                            minWidth: 20),
+                        child: Stack(
+                          children: <Widget>[
+                            if (positionRadio != null &&
+                                (stateElement.snapshotUrl != null ||
+                                    stateElement.snapshotUrl != null))
+                              AspectRatio(
+                                aspectRatio: positionRadio,
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                      color: Colors.transparent),
+                                ),
                               ),
+                            Row(
+                              children: [
+                                Expanded(
+                                    child: generateSnapshot(theme,
+                                        stateElement.snapshotHeight ?? 100))
+                              ],
                             ),
-                          Row(
-                            children: [Expanded(child: generateSnapshot(theme, stateElement.snapshotHeight ?? 100))],
-                          ),
-                          if (widget.message.status != MessageStatus.V2TIM_MSG_STATUS_SENDING &&
-                                  (stateElement.snapshotUrl != null || stateElement.snapshotPath != null) &&
-                                  stateElement.videoPath != null ||
-                              stateElement.videoUrl != null)
-                            Positioned.fill(
-                              // alignment: Alignment.center,
-                              child: Center(
-                                  child:
-                                      Image.asset('images/play.png', package: 'tencent_cloud_chat_uikit', height: 64)),
-                            ),
-                          if (widget.message.videoElem?.duration != null && widget.message.videoElem!.duration! > 0)
-                            Positioned(
-                                right: 10,
-                                bottom: 10,
-                                child: Text(
-                                    MessageUtils.formatVideoTime(widget.message.videoElem!.duration!).toString(),
-                                    style: const TextStyle(color: Colors.white, fontSize: 12))),
-                        ],
-                      ));
-                }),
+                            if (widget.message.status !=
+                                        MessageStatus
+                                            .V2TIM_MSG_STATUS_SENDING &&
+                                    (stateElement.snapshotUrl != null ||
+                                        stateElement.snapshotPath != null) &&
+                                    stateElement.videoPath != null ||
+                                stateElement.videoUrl != null)
+                              Positioned.fill(
+                                // alignment: Alignment.center,
+                                child: Center(
+                                    child: Image.asset('images/play.png',
+                                        package: 'tencent_cloud_chat_uikit',
+                                        height: 64)),
+                              ),
+                            if (widget.message.videoElem?.duration != null &&
+                                widget.message.videoElem!.duration! > 0)
+                              Positioned(
+                                  right: 10,
+                                  bottom: 10,
+                                  child: Text(
+                                      MessageUtils.formatVideoTime(widget
+                                              .message.videoElem!.duration!)
+                                          .toString(),
+                                      style: const TextStyle(
+                                          color: Colors.white, fontSize: 12))),
+                          ],
+                        ));
+                  }),
+                ),
               ))),
     );
   }

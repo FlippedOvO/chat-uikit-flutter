@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:tencent_chat_i18n_tool/tencent_chat_i18n_tool.dart';
+import 'package:tencent_cloud_chat_sdk/enum/group_member_role.dart';
 import 'package:tencent_cloud_chat_sdk/enum/message_elem_type.dart';
 import 'package:tencent_cloud_chat_sdk/enum/message_status.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_group_member_full_info.dart'
@@ -27,6 +28,9 @@ import 'package:tencent_cloud_chat_uikit/data_services/core/tim_uikit_wide_modal
 import 'package:tencent_cloud_chat_uikit/data_services/message/message_services.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/services_locatar.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/theme/color.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/ui/constants/history_message_constant.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/message.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/platform.dart';
@@ -47,9 +51,6 @@ import 'package:tencent_cloud_chat_uikit/ui/widgets/wide_popup.dart';
 import 'package:tencent_super_tooltip/tencent_super_tooltip.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-import 'package:tencent_cloud_chat_uikit/theme/color.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme_view_model.dart';
 import '../TIMUIKitMessageItem/TIMUIKitMessageReaction/tim_uikit_message_reaction_select_emoji.dart';
 
 typedef MessageRowBuilder = Widget? Function(
@@ -288,6 +289,7 @@ class TIMUIKitHistoryMessageListItem extends StatefulWidget {
   final List<CustomEmojiFaceData> customEmojiStickerList;
 
   final V2TimGroupMemberFullInfo? groupMemberInfo;
+  final V2TimGroupMemberFullInfo? senderGroupMemberInfo;
 
   /// This parameter accepts a custom widget to be displayed when the mouse hovers over a message,
   /// replacing the default message hover action bar.
@@ -324,6 +326,7 @@ class TIMUIKitHistoryMessageListItem extends StatefulWidget {
       this.textFieldController,
       this.onSecondaryTapForOthersPortrait,
       this.groupMemberInfo,
+      this.senderGroupMemberInfo,
       this.customMessageHoverBarOnDesktop})
       : super(key: key);
 
@@ -1181,7 +1184,7 @@ class _TIMUIKItHistoryMessageListItemState
             message.status == MessageStatus.V2TIM_MSG_STATUS_SEND_FAIL)
           Container(
               padding: const EdgeInsets.only(bottom: 3),
-              margin: const EdgeInsets.only(right: 6),
+              margin: const EdgeInsets.only(right: 6, bottom: 24),
               child: GestureDetector(
                 onTap: () async {
                   final reSend = await showResendMsgFailDialog(context);
@@ -1474,14 +1477,87 @@ class _TIMUIKItHistoryMessageListItemState
                                                     .size
                                                     .width /
                                                 1.7),
-                                        child: Text(
-                                          MessageUtils.getDisplayName(message),
-                                          overflow: TextOverflow.ellipsis,
-                                          style: widget.themeData
-                                                  ?.nickNameTextStyle ??
-                                              TextStyle(
-                                                  fontSize: 12,
-                                                  color: theme.weakTextColor),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              MessageUtils.getDisplayName(
+                                                  message),
+                                              overflow: TextOverflow.ellipsis,
+                                              style: widget.themeData
+                                                      ?.nickNameTextStyle ??
+                                                  TextStyle(
+                                                      fontSize: 12,
+                                                      color:
+                                                          theme.weakTextColor),
+                                            ),
+                                            widget.senderGroupMemberInfo
+                                                        ?.role ==
+                                                    GroupMemberRoleType
+                                                        .V2TIM_GROUP_MEMBER_ROLE_OWNER
+                                                ? Container(
+                                                    margin:
+                                                        const EdgeInsets.only(
+                                                            left: 5),
+                                                    child: Text(TIM_t("群主"),
+                                                        style: TextStyle(
+                                                          color:
+                                                              theme.ownerColor,
+                                                          fontSize:
+                                                              isDesktopScreen
+                                                                  ? 10
+                                                                  : 12,
+                                                        )),
+                                                    padding: const EdgeInsets
+                                                        .fromLTRB(5, 0, 5, 0),
+                                                    decoration: BoxDecoration(
+                                                      border: Border.all(
+                                                          color: theme
+                                                                  .ownerColor ??
+                                                              CommonColor
+                                                                  .ownerColor,
+                                                          width: 1),
+                                                      borderRadius:
+                                                          const BorderRadius
+                                                              .all(
+                                                              Radius.circular(
+                                                                  4.0)),
+                                                    ),
+                                                  )
+                                                : widget.senderGroupMemberInfo
+                                                            ?.role ==
+                                                        GroupMemberRoleType
+                                                            .V2TIM_GROUP_MEMBER_ROLE_ADMIN
+                                                    ? Container(
+                                                        margin: const EdgeInsets
+                                                            .only(left: 5),
+                                                        child: Text(
+                                                            TIM_t("管理员"),
+                                                            style: TextStyle(
+                                                              color: theme
+                                                                  .adminColor,
+                                                              fontSize: 12,
+                                                            )),
+                                                        padding:
+                                                            const EdgeInsets
+                                                                .fromLTRB(
+                                                                5, 0, 5, 0),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          border: Border.all(
+                                                              color: theme
+                                                                      .adminColor ??
+                                                                  CommonColor
+                                                                      .adminColor,
+                                                              width: 1),
+                                                          borderRadius:
+                                                              const BorderRadius
+                                                                  .all(Radius
+                                                                      .circular(
+                                                                          4.0)),
+                                                        ),
+                                                      )
+                                                    : Container()
+                                          ],
                                         ),
                                       )),
                               Row(

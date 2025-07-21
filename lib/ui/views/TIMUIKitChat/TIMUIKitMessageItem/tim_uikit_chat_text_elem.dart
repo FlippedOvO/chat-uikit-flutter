@@ -1,18 +1,20 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
-    if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
-import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:extended_text/extended_text.dart';
 import 'package:flutter/material.dart';
+import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
+    if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitMessageItem/chat_time.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitTextField/special_text/DefaultSpecialTextSpanBuilder.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/link_preview/link_preview_entry.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/link_preview/widgets/link_preview.dart';
+
 import 'TIMUIKitMessageReaction/tim_uikit_message_reaction_show_panel.dart';
 
 class TIMUIKitTextElem extends StatefulWidget {
@@ -214,61 +216,67 @@ class _TIMUIKitTextElemState extends TIMUIKitState<TIMUIKitTextElem> {
         ? const Color.fromRGBO(245, 166, 35, 1)
         : (defaultStyle ?? widget.backgroundColor);
 
-    return Container(
-      padding: widget.textPadding ?? EdgeInsets.all(isDesktopScreen ? 12 : 10),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: widget.borderRadius ?? borderRadius,
-      ),
-      constraints:
-          BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.6),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // If the [elemType] is text message, it will not be null here.
-          // You can render the widget from extension directly, with a [TextStyle] optionally.
-          widget.chatModel.chatConfig.urlPreviewType != UrlPreviewType.none
-              ? textWithLink!(
-                  style: widget.fontStyle ??
-                      TextStyle(
-                          fontSize: isDesktopScreen ? 14 : 16,
-                          textBaseline: TextBaseline.ideographic,
-                          height: widget.chatModel.chatConfig.textHeight))
-              : ExtendedText(
-                  Encrypt.shared.decrypt(widget.message.textElem?.text ?? ""),
-                  softWrap: true,
-                  style: widget.fontStyle ??
-                      TextStyle(
-                          fontSize: isDesktopScreen ? 14 : 16,
-                          height: widget.chatModel.chatConfig.textHeight),
-                  specialTextSpanBuilder: DefaultSpecialTextSpanBuilder(
-                    isUseQQPackage: widget.chatModel.chatConfig
-                            .stickerPanelConfig?.useQQStickerPackage ??
-                        true,
-                    isUseTencentCloudChatPackage: widget
-                            .chatModel
-                            .chatConfig
-                            .stickerPanelConfig
-                            ?.useTencentCloudChatStickerPackage ??
-                        true,
-                    isUseTencentCloudChatPackageOldKeys: widget
-                            .chatModel
-                            .chatConfig
-                            .stickerPanelConfig
-                            ?.useTencentCloudChatStickerPackageOldKeys ??
-                        false,
-                    customEmojiStickerList: widget.customEmojiStickerList,
-                    showAtBackground: true,
-                    checkHttpLink: true,
-                  )),
-          // If the link preview info is available, render the preview card.
-          // if (_renderPreviewWidget() != null &&
-          //     widget.chatModel.chatConfig.urlPreviewType ==
-          //         UrlPreviewType.previewCardAndHyperlink)
-          //   _renderPreviewWidget()!,
-          if (widget.isShowMessageReaction ?? true)
-            TIMUIKitMessageReactionShowPanel(message: widget.message)
-        ],
+    return ChatTime(
+      timestamp: widget.message.timestamp,
+      color: theme.weakTextColor,
+      isSelf: widget.message.isSelf,
+      child: Container(
+        padding:
+            widget.textPadding ?? EdgeInsets.all(isDesktopScreen ? 12 : 10),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          borderRadius: widget.borderRadius ?? borderRadius,
+        ),
+        constraints:
+            BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.6),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // If the [elemType] is text message, it will not be null here.
+            // You can render the widget from extension directly, with a [TextStyle] optionally.
+            widget.chatModel.chatConfig.urlPreviewType != UrlPreviewType.none
+                ? textWithLink!(
+                    style: widget.fontStyle ??
+                        TextStyle(
+                            fontSize: isDesktopScreen ? 14 : 16,
+                            textBaseline: TextBaseline.ideographic,
+                            height: widget.chatModel.chatConfig.textHeight))
+                : ExtendedText(
+                    Encrypt.shared.decrypt(widget.message.textElem?.text ?? ""),
+                    softWrap: true,
+                    style: widget.fontStyle ??
+                        TextStyle(
+                            fontSize: isDesktopScreen ? 14 : 16,
+                            height: widget.chatModel.chatConfig.textHeight),
+                    specialTextSpanBuilder: DefaultSpecialTextSpanBuilder(
+                      isUseQQPackage: widget.chatModel.chatConfig
+                              .stickerPanelConfig?.useQQStickerPackage ??
+                          true,
+                      isUseTencentCloudChatPackage: widget
+                              .chatModel
+                              .chatConfig
+                              .stickerPanelConfig
+                              ?.useTencentCloudChatStickerPackage ??
+                          true,
+                      isUseTencentCloudChatPackageOldKeys: widget
+                              .chatModel
+                              .chatConfig
+                              .stickerPanelConfig
+                              ?.useTencentCloudChatStickerPackageOldKeys ??
+                          false,
+                      customEmojiStickerList: widget.customEmojiStickerList,
+                      showAtBackground: true,
+                      checkHttpLink: true,
+                    )),
+            // If the link preview info is available, render the preview card.
+            // if (_renderPreviewWidget() != null &&
+            //     widget.chatModel.chatConfig.urlPreviewType ==
+            //         UrlPreviewType.previewCardAndHyperlink)
+            //   _renderPreviewWidget()!,
+            if (widget.isShowMessageReaction ?? true)
+              TIMUIKitMessageReactionShowPanel(message: widget.message)
+          ],
+        ),
       ),
     );
   }

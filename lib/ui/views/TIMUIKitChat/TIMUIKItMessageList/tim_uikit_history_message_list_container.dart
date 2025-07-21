@@ -12,17 +12,17 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_group_member_full_info.dart
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_group_member_full_info.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
-import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitTextField/tim_uikit_text_field_controller.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_chat_global_model.dart';
 import 'package:tencent_cloud_chat_uikit/ui/constants/history_message_constant.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKItMessageList/TIMUIKitTongue/tim_uikit_chat_history_message_list_tongue.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKItMessageList/tim_uikit_chat_history_message_list.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKItMessageList/tim_uikit_chat_history_message_list_config.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKItMessageList/tim_uikit_chat_history_message_list_item.dart';
-import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKItMessageList/tim_uikit_chat_history_message_list.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitTextField/tim_uikit_text_field_controller.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/tim_uikit_chat_config.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tim_ui_kit_sticker_plugin/utils/tim_custom_face_data.dart';
 
 enum LoadingPlace {
@@ -35,7 +35,8 @@ class TIMUIKitHistoryMessageListContainer extends StatefulWidget {
   final Widget Function(BuildContext, V2TimMessage?)? itemBuilder;
   final AutoScrollController? scrollController;
   final String conversationID;
-  final Function(String? userId, String? nickName)? onLongPressForOthersHeadPortrait;
+  final Function(String? userId, String? nickName)?
+      onLongPressForOthersHeadPortrait;
   final List<V2TimGroupAtInfo?>? groupAtInfoList;
   final V2TimMessage? initFindingMsg;
 
@@ -46,13 +47,14 @@ class TIMUIKitHistoryMessageListContainer extends StatefulWidget {
   final TIMUIKitInputTextFieldController? textFieldController;
 
   /// the builder for avatar
-  final Widget Function(BuildContext context, V2TimMessage message)? userAvatarBuilder;
+  final Widget Function(BuildContext context, V2TimMessage message)?
+      userAvatarBuilder;
 
   /// the builder for tongue
   final TongueItemBuilder? tongueItemBuilder;
 
-  final Widget? Function(V2TimMessage message, Function() closeTooltip, [Key? key, BuildContext? context])?
-      extraTipsActionItemBuilder;
+  final Widget? Function(V2TimMessage message, Function() closeTooltip,
+      [Key? key, BuildContext? context])? extraTipsActionItemBuilder;
 
   /// conversation type
   final ConvType conversationType;
@@ -61,7 +63,8 @@ class TIMUIKitHistoryMessageListContainer extends StatefulWidget {
   final void Function(String userID, TapDownDetails tapDetails)? onTapAvatar;
 
   /// Avatar and name in message reaction secondary tap callback.
-  final void Function(String userID, TapDownDetails tapDetails)? onSecondaryTapAvatar;
+  final void Function(String userID, TapDownDetails tapDetails)?
+      onSecondaryTapAvatar;
 
   @Deprecated(
       "Nickname will not show in one-to-one chat, if you tend to control it in group chat, please use `isShowSelfNameInGroup` and `isShowOthersNameInGroup` from `config: TIMUIKitChatConfig` instead")
@@ -79,6 +82,7 @@ class TIMUIKitHistoryMessageListContainer extends StatefulWidget {
   final V2TimConversation conversation;
 
   final V2TimGroupMemberFullInfo? groupMemberInfo;
+  final List<V2TimGroupMemberFullInfo?>? groupMemberList;
 
   /// This parameter accepts a custom widget to be displayed when the mouse hovers over a message,
   /// replacing the default message hover action bar.
@@ -111,21 +115,26 @@ class TIMUIKitHistoryMessageListContainer extends StatefulWidget {
     required this.conversation,
     this.onSecondaryTapAvatar,
     this.groupMemberInfo,
+    this.groupMemberList,
     this.customMessageHoverBarOnDesktop,
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _TIMUIKitHistoryMessageListContainerState();
+  State<StatefulWidget> createState() =>
+      _TIMUIKitHistoryMessageListContainerState();
 }
 
-class _TIMUIKitHistoryMessageListContainerState extends TIMUIKitState<TIMUIKitHistoryMessageListContainer> {
+class _TIMUIKitHistoryMessageListContainerState
+    extends TIMUIKitState<TIMUIKitHistoryMessageListContainer> {
   late TIMUIKitHistoryMessageListController _historyMessageListController;
 
   List<V2TimMessage?> historyMessageList = [];
 
-  Future<bool> requestForData(String? lastMsgID, LoadDirection direction, TUIChatSeparateViewModel model,
+  Future<bool> requestForData(String? lastMsgID, LoadDirection direction,
+      TUIChatSeparateViewModel model,
       [int? count, int? lastSeq]) async {
-    if ((direction == LoadDirection.previous) || (direction == LoadDirection.latest && model.haveMoreLatestData)) {
+    if ((direction == LoadDirection.previous) ||
+        (direction == LoadDirection.latest && model.haveMoreLatestData)) {
       return await model.loadChatRecord(
         direction: direction,
         count: count ?? (kIsWeb ? 15 : HistoryMessageDartConstant.getCount),
@@ -137,10 +146,12 @@ class _TIMUIKitHistoryMessageListContainerState extends TIMUIKitState<TIMUIKitHi
     }
   }
 
-  Widget Function(BuildContext, V2TimMessage)? _getTopRowBuilder(TUIChatSeparateViewModel model) {
+  Widget Function(BuildContext, V2TimMessage)? _getTopRowBuilder(
+      TUIChatSeparateViewModel model) {
     if (widget.messageItemBuilder?.messageNickNameBuilder != null) {
       return (BuildContext context, V2TimMessage message) {
-        return widget.messageItemBuilder!.messageNickNameBuilder!(context, message, model);
+        return widget.messageItemBuilder!.messageNickNameBuilder!(
+            context, message, model);
       };
     }
     return null;
@@ -149,13 +160,15 @@ class _TIMUIKitHistoryMessageListContainerState extends TIMUIKitState<TIMUIKitHi
   @override
   void initState() {
     super.initState();
-    _historyMessageListController = TIMUIKitHistoryMessageListController(scrollController: widget.scrollController);
+    _historyMessageListController = TIMUIKitHistoryMessageListController(
+        scrollController: widget.scrollController);
   }
 
   @override
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
     final chatConfig = Provider.of<TIMUIKitChatConfig>(context);
-    final TUIChatSeparateViewModel model = Provider.of<TUIChatSeparateViewModel>(context, listen: false);
+    final TUIChatSeparateViewModel model =
+        Provider.of<TUIChatSeparateViewModel>(context, listen: false);
 
     return TIMUIKitHistoryMessageListSelector(
       conversationID: model.conversationID,
@@ -168,23 +181,33 @@ class _TIMUIKitHistoryMessageListContainerState extends TIMUIKitState<TIMUIKitHi
           groupAtInfoList: widget.groupAtInfoList,
           mainHistoryListConfig: widget.mainHistoryListConfig,
           itemBuilder: (context, message) {
+            final senderGroupMemberInfo = widget.groupMemberList?.firstWhere(
+              (element) => element?.userID == message?.sender,
+              orElse: () => null,
+            );
             return TIMUIKitHistoryMessageListItem(
-                customMessageHoverBarOnDesktop: widget.customMessageHoverBarOnDesktop,
+                customMessageHoverBarOnDesktop:
+                    widget.customMessageHoverBarOnDesktop,
                 groupMemberInfo: widget.groupMemberInfo,
+                senderGroupMemberInfo: senderGroupMemberInfo,
                 textFieldController: widget.textFieldController,
                 userAvatarBuilder: widget.userAvatarBuilder,
                 customEmojiStickerList: widget.customEmojiStickerList,
                 topRowBuilder: _getTopRowBuilder(model),
                 onScrollToIndex: _historyMessageListController.scrollToIndex,
-                onScrollToIndexBegin: _historyMessageListController.scrollToIndexBegin,
-                toolTipsConfig:
-                    widget.toolTipsConfig ?? ToolTipsConfig(additionalItemBuilder: widget.extraTipsActionItemBuilder),
+                onScrollToIndexBegin:
+                    _historyMessageListController.scrollToIndexBegin,
+                toolTipsConfig: widget.toolTipsConfig ??
+                    ToolTipsConfig(
+                        additionalItemBuilder:
+                            widget.extraTipsActionItemBuilder),
                 message: message!,
                 showAvatar: chatConfig.isShowAvatar,
                 onSecondaryTapForOthersPortrait: widget.onSecondaryTapAvatar,
                 onTapForOthersPortrait: widget.onTapAvatar,
                 messageItemBuilder: widget.messageItemBuilder,
-                onLongPressForOthersHeadPortrait: widget.onLongPressForOthersHeadPortrait,
+                onLongPressForOthersHeadPortrait:
+                    widget.onLongPressForOthersHeadPortrait,
                 allowAtUserWhenReply: chatConfig.isAtWhenReply,
                 allowAvatarTap: chatConfig.isAllowClickAvatar,
                 allowLongPress: chatConfig.isAllowLongPressMessage,
@@ -193,7 +216,8 @@ class _TIMUIKitHistoryMessageListContainerState extends TIMUIKitState<TIMUIKitHi
           tongueItemBuilder: widget.tongueItemBuilder,
           initFindingMsg: widget.initFindingMsg,
           messageList: messageList,
-          onLoadMore: (String? a, LoadDirection direction, [int? b, int? lastSeq]) async {
+          onLoadMore: (String? a, LoadDirection direction,
+              [int? b, int? lastSeq]) async {
             return await requestForData(a, direction, model, b, lastSeq);
           },
         );

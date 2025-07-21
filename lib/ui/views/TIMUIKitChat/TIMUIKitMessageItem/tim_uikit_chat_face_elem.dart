@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
-import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
 import 'package:tencent_cloud_chat_uikit/business_logic/separate_models/tui_chat_separate_view_model.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitMessageItem/TIMUIKitMessageReaction/tim_uikit_message_reaction_wrapper.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitChat/TIMUIKitMessageItem/chat_time.dart';
 
 class TIMUIKitFaceElem extends StatefulWidget {
   final String path;
@@ -48,7 +49,8 @@ class _TIMUIKitTextElemState extends TIMUIKitState<TIMUIKitFaceElem> {
 
   @override
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
-    final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+    final isDesktopScreen =
+        TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
     return TIMUIKitMessageReactionWrapper(
         chatModel: widget.model,
         isShowJump: widget.isShowJump,
@@ -56,10 +58,19 @@ class _TIMUIKitTextElemState extends TIMUIKitState<TIMUIKitFaceElem> {
         clearJump: widget.clearJump,
         message: widget.message,
         isShowMessageReaction: widget.isShowMessageReaction ?? true,
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * (isDesktopScreen ? 0.1 : 0.3)),
-          child: isFromNetwork() ? Image.network(widget.path) : Image.asset(createPathFromNative(widget.path)),
+        child: ChatTime(
+          timestamp: widget.message.timestamp,
+          color: value.theme.weakTextColor,
+          isSelf: widget.message.isSelf,
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            constraints: BoxConstraints(
+                maxWidth: MediaQuery.of(context).size.width *
+                    (isDesktopScreen ? 0.1 : 0.3)),
+            child: isFromNetwork()
+                ? Image.network(widget.path)
+                : Image.asset(createPathFromNative(widget.path)),
+          ),
         ));
   }
 }

@@ -17,10 +17,11 @@ class TIMUIKitAppBarTitle extends StatelessWidget {
       this.textStyle,
       required this.conversationShowName,
       required this.showC2cMessageEditStatus,
-      required this.fromUser, this.onClick})
+      required this.fromUser,
+      this.onClick})
       : super(key: key);
 
-  Widget titleText(String text){
+  Widget titleText(String text) {
     return InkWell(
       onTapDown: onClick,
       child: Text(
@@ -43,19 +44,21 @@ class TIMUIKitAppBarTitle extends StatelessWidget {
       if (title != null) {
         return title!;
       }
-      return titleText(conversationShowName,);
+      return titleText(
+        conversationShowName,
+      );
     } else {
       if (showC2cMessageEditStatus) {
         return titleText(
-          TIM_t("对方正在输入中..."),);
-
+          TIM_t("对方正在输入中..."),
+        );
       } else {
         if (title != null) {
           return title!;
         }
         return titleText(
-          conversationShowName,);
-
+          conversationShowName,
+        );
       }
     }
   }

@@ -7,17 +7,18 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_user_status.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_user_status.dart';
-import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_statelesswidget.dart';
+import 'package:tencent_cloud_chat_uikit/theme/color.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/screen_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/time_ago.dart';
 import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitConversation/tim_uikit_conversation_last_msg.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/avatar.dart';
 import 'package:tencent_cloud_chat_uikit/ui/widgets/unread_message.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
-import 'package:tencent_cloud_chat_uikit/theme/color.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 
-typedef LastMessageBuilder = Widget? Function(V2TimMessage? lastMsg, List<V2TimGroupAtInfo?> groupAtInfoList);
+typedef LastMessageBuilder = Widget? Function(
+    V2TimMessage? lastMsg, List<V2TimGroupAtInfo?> groupAtInfoList);
 
 class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
   final String faceUrl;
@@ -52,8 +53,11 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
   }) : super(key: key);
 
   Widget _getShowMsgWidget(BuildContext context) {
-    final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
-    if (lastMsg != null && lastMessageBuilder != null && lastMessageBuilder!(lastMsg, groupAtInfoList) != null) {
+    final isDesktopScreen =
+        TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+    if (lastMsg != null &&
+        lastMessageBuilder != null &&
+        lastMessageBuilder!(lastMsg, groupAtInfoList) != null) {
       return lastMessageBuilder!(lastMsg, groupAtInfoList)!;
     }
 
@@ -87,7 +91,8 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
               color: theme.conversationItemTitmeTextColor,
             ));
       } else if (lastMsg != null) {
-        return Text(TimeAgo().getTimeStringForChat(lastMsg!.timestamp as int) ?? "",
+        return Text(
+            TimeAgo().getTimeStringForChat(lastMsg!.timestamp as int) ?? "",
             style: TextStyle(
               fontSize: 11,
               color: theme.conversationItemTitmeTextColor,
@@ -101,13 +106,15 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
   @override
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
     final TUITheme theme = value.theme;
-    final isDesktopScreen = TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
+    final isDesktopScreen =
+        TUIKitScreenUtils.getFormFactor(context) == DeviceType.Desktop;
     return Container(
       padding: const EdgeInsets.only(top: 6, bottom: 6, left: 16, right: 16),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
-            color: theme.conversationItemBorderColor ?? CommonColor.weakDividerColor,
+            color: theme.conversationItemBorderColor ??
+                CommonColor.weakDividerColor,
             width: 1,
           ),
         ),
@@ -124,18 +131,11 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
                 fit: StackFit.expand,
                 clipBehavior: Clip.none,
                 children: [
-                  Avatar(onlineStatus: onlineStatus, faceUrl: faceUrl, showName: nickName, type: convType),
-                  if (unreadCount != 0)
-                    Positioned(
-                      top: isDisturb ? -2.5 : -4.5,
-                      right: isDisturb ? -2.5 : -4.5,
-                      child: UnconstrainedBox(
-                        child: UnreadMessage(
-                            width: isDisturb ? 10 : 18,
-                            height: isDisturb ? 10 : 18,
-                            unreadCount: isDisturb ? 0 : unreadCount),
-                      ),
-                    )
+                  Avatar(
+                      onlineStatus: onlineStatus,
+                      faceUrl: faceUrl,
+                      showName: nickName,
+                      type: convType),
                 ],
               ),
             ),
@@ -184,6 +184,13 @@ class TIMUIKitConversationItem extends TIMUIKitStatelessWidget {
                           color: theme.conversationItemNoNotificationIconColor,
                           size: isDesktopScreen ? 14 : 16.0,
                         ),
+                      ),
+                    if (unreadCount != 0)
+                      UnconstrainedBox(
+                        child: UnreadMessage(
+                            width: isDisturb ? 10 : 18,
+                            height: isDisturb ? 10 : 18,
+                            unreadCount: isDisturb ? 0 : unreadCount),
                       )
                   ],
                 ),

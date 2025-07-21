@@ -2,14 +2,16 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_user_status.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_user_status.dart';
-import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_self_info_view_model.dart';
-import 'package:tencent_cloud_chat_uikit/ui/utils/common_utils.dart';
-import 'package:tencent_cloud_chat_uikit/ui/widgets/image_screen.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_statelesswidget.dart';
+import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_self_info_view_model.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/core/core_services_implements.dart';
 import 'package:tencent_cloud_chat_uikit/data_services/services_locatar.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
 import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
+import 'package:tencent_cloud_chat_uikit/ui/utils/common_utils.dart';
+import 'package:tencent_cloud_chat_uikit/ui/widgets/image_screen.dart';
+
+const double defaultBorderRadius = 24;
 
 class Avatar extends TIMUIKitStatelessWidget {
   final String faceUrl;
@@ -20,35 +22,86 @@ class Avatar extends TIMUIKitStatelessWidget {
   final V2TimUserStatus? onlineStatus;
   final int? type; // 1 c2c 2 group
   final bool isShowBigWhenClick;
-  final TUISelfInfoViewModel selfInfoViewModel = serviceLocator<TUISelfInfoViewModel>();
+  final TUISelfInfoViewModel selfInfoViewModel =
+      serviceLocator<TUISelfInfoViewModel>();
+  final double fontSize;
 
-  Avatar(
-      {Key? key,
-      required this.faceUrl,
-      this.onlineStatus,
-      required this.showName,
-      this.isShowBigWhenClick = false,
-      this.isFromLocalAsset = false,
-      this.borderRadius,
-      this.type = 1})
-      : super(key: key);
+  Avatar({
+    Key? key,
+    required this.faceUrl,
+    this.onlineStatus,
+    required this.showName,
+    this.isShowBigWhenClick = false,
+    this.isFromLocalAsset = false,
+    this.borderRadius,
+    this.type = 1,
+    this.fontSize = 20,
+  }) : super(key: key);
 
   Widget getImageWidget(BuildContext context, TUITheme theme) {
     Widget defaultAvatar() {
       if (type == 1) {
+        return Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                theme.primaryMaterialColor.withAlpha(100),
+                theme.primaryMaterialColor,
+              ],
+            ),
+          ),
+          child: Text(
+            showName[0].toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        );
         return Image.asset(
-            TencentUtils.checkString(selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
+            TencentUtils.checkString(
+                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
                 'images/default_c2c_head.png',
             fit: BoxFit.cover,
             package:
-                selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null ? null : 'tencent_cloud_chat_uikit');
+                selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null
+                    ? null
+                    : 'tencent_cloud_chat_uikit');
       } else {
+        return Container(
+          alignment: Alignment.center,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                theme.primaryMaterialColor.withAlpha(100),
+                theme.primaryMaterialColor,
+              ],
+            ),
+          ),
+          child: Text(
+            showName[0].toUpperCase(),
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: fontSize,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        );
         return Image.asset(
-            TencentUtils.checkString(selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
+            TencentUtils.checkString(
+                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
                 'images/default_group_head.png',
             fit: BoxFit.cover,
             package:
-                selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null ? null : 'tencent_cloud_chat_uikit');
+                selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null
+                    ? null
+                    : 'tencent_cloud_chat_uikit');
       }
     }
 
@@ -57,11 +110,12 @@ class Avatar extends TIMUIKitStatelessWidget {
       if (isFromLocalAsset) {
         return Image.asset(
           faceUrl,
-          fit: BoxFit.cover,
+          fit: BoxFit.fill,
         );
       }
       return CachedNetworkImage(
         imageUrl: faceUrl,
+        fit: BoxFit.fill,
         fadeInDuration: const Duration(milliseconds: 0),
         errorWidget: (BuildContext context, String c, dynamic s) {
           return defaultAvatar();
@@ -76,19 +130,27 @@ class Avatar extends TIMUIKitStatelessWidget {
     ImageProvider defaultAvatar() {
       if (type == 1) {
         return Image.asset(
-                TencentUtils.checkString(selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
+                TencentUtils.checkString(selfInfoViewModel
+                        .globalConfig?.defaultAvatarAssetPath) ??
                     'images/default_c2c_head.png',
                 fit: BoxFit.cover,
                 package:
-                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null ? null : 'tencent_cloud_chat_uikit')
+                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath !=
+                            null
+                        ? null
+                        : 'tencent_cloud_chat_uikit')
             .image;
       } else {
         return Image.asset(
-                TencentUtils.checkString(selfInfoViewModel.globalConfig?.defaultAvatarAssetPath) ??
+                TencentUtils.checkString(selfInfoViewModel
+                        .globalConfig?.defaultAvatarAssetPath) ??
                     'images/default_group_head.png',
                 fit: BoxFit.cover,
                 package:
-                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath != null ? null : 'tencent_cloud_chat_uikit')
+                    selfInfoViewModel.globalConfig?.defaultAvatarAssetPath !=
+                            null
+                        ? null
+                        : 'tencent_cloud_chat_uikit')
             .image;
       }
     }
@@ -119,7 +181,8 @@ class Avatar extends TIMUIKitStatelessWidget {
               Navigator.of(context).push(
                 PageRouteBuilder(
                   opaque: false, // set to false
-                  pageBuilder: (_, __, ___) => ImageScreen(imageProvider: getImageProvider(), heroTag: faceUrl),
+                  pageBuilder: (_, __, ___) => ImageScreen(
+                      imageProvider: getImageProvider(), heroTag: faceUrl),
                 ),
               );
             },
@@ -128,15 +191,16 @@ class Avatar extends TIMUIKitStatelessWidget {
               child: ClipRRect(
                 borderRadius: borderRadius ??
                     selfInfoViewModel.globalConfig?.defaultAvatarBorderRadius ??
-                    BorderRadius.circular(4.8),
+                    BorderRadius.circular(defaultBorderRadius),
                 child: getImageWidget(context, theme),
               ),
             ),
           ),
         if (!isShowBigWhenClick)
           ClipRRect(
-            borderRadius:
-                borderRadius ?? selfInfoViewModel.globalConfig?.defaultAvatarBorderRadius ?? BorderRadius.circular(4.8),
+            borderRadius: borderRadius ??
+                selfInfoViewModel.globalConfig?.defaultAvatarBorderRadius ??
+                BorderRadius.circular(defaultBorderRadius),
             child: getImageWidget(context, theme),
           ),
         if (onlineStatus?.statusType != null && onlineStatus?.statusType != 0)

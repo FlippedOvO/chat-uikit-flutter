@@ -1,7 +1,10 @@
 // ignore_for_file: unrelated_type_equality_checks, avoid_print
 
 import 'dart:convert';
+
+import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:intl/intl.dart';
 import 'package:tencent_chat_i18n_tool/tencent_chat_i18n_tool.dart';
 import 'package:tencent_cloud_chat_sdk/enum/group_change_info_type.dart';
 import 'package:tencent_cloud_chat_sdk/enum/group_tips_elem_type.dart';
@@ -24,12 +27,10 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_value_callback.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_value_callback.dart';
 import 'package:tencent_cloud_chat_sdk/tencent_im_sdk_plugin.dart';
 import 'package:tencent_cloud_chat_uikit/tencent_cloud_chat_uikit.dart';
+import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 import 'package:tencent_cloud_chat_uikit/ui/constants/history_message_constant.dart';
 import 'package:tencent_cloud_chat_uikit/ui/constants/time.dart';
-import 'package:collection/collection.dart';
-import 'package:tencent_cloud_chat_uikit/ui/utils/common_utils.dart';
 import 'package:tencent_cloud_chat_uikit/ui/utils/logger.dart';
-import 'package:tencent_cloud_chat_uikit/theme/tui_theme.dart';
 
 class MessageUtils {
   // 判断CallingData的方式和Trtc的方法一致
@@ -378,5 +379,18 @@ class MessageUtils {
     if (sendMsgRes == null) return null;
 
     return sendMsgRes;
+  }
+
+  static String formatMessageTime(int? timestamp) {
+    if (timestamp == null || timestamp <= 0) {
+      return "";
+    }
+    final DateTime dateTime =
+        DateTime.fromMillisecondsSinceEpoch(timestamp * 1000);
+    final DateTime now = DateTime.now();
+    final Duration difference = now.difference(dateTime);
+    final time = DateFormat("HH:mm:ss").format(dateTime);
+
+    return time;
   }
 }

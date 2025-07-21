@@ -11,18 +11,22 @@ import 'package:tencent_cloud_chat_sdk/models/v2_tim_friend_info_result.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_friend_info_result.dart';
 import 'package:tencent_cloud_chat_sdk/models/v2_tim_message.dart'
     if (dart.library.html) 'package:tencent_cloud_chat_sdk/web/compatible_models/v2_tim_message.dart';
-import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
-import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_item.dart';
-import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_folder.dart';
-import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_search_view_model.dart';
-import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_showAll.dart';
 import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_base.dart';
+import 'package:tencent_cloud_chat_uikit/base_widgets/tim_ui_kit_state.dart';
+import 'package:tencent_cloud_chat_uikit/business_logic/view_models/tui_search_view_model.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_folder.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_item.dart';
+import 'package:tencent_cloud_chat_uikit/ui/views/TIMUIKitSearch/pureUI/tim_uikit_search_showAll.dart';
 
 class TIMUIKitSearchFriend extends StatefulWidget {
   List<V2TimFriendInfoResult> friendResultList;
   final Function(V2TimConversation, V2TimMessage?) onTapConversation;
 
-  TIMUIKitSearchFriend({required this.friendResultList, Key? key, required this.onTapConversation}) : super(key: key);
+  TIMUIKitSearchFriend(
+      {required this.friendResultList,
+      Key? key,
+      required this.onTapConversation})
+      : super(key: key);
 
   @override
   State<StatefulWidget> createState() => TIMUIKitSearchFriendState();
@@ -45,26 +49,33 @@ class TIMUIKitSearchFriendState extends TIMUIKitState<TIMUIKitSearchFriend> {
 
   @override
   Widget tuiBuild(BuildContext context, TUIKitBuildValue value) {
-    List<V2TimConversation?> _conversationList = Provider.of<TUISearchViewModel>(context).conversationList;
+    List<V2TimConversation?> _conversationList =
+        Provider.of<TUISearchViewModel>(context).conversationList;
 
-    List<V2TimFriendInfoResult> filteredFriendResultList = widget.friendResultList.where((friend) {
-      int index = _conversationList.indexWhere((conv) => friend.friendInfo?.userID == conv?.userID);
+    List<V2TimFriendInfoResult> filteredFriendResultList =
+        widget.friendResultList.where((friend) {
+      int index = _conversationList
+          .indexWhere((conv) => friend.friendInfo?.userID == conv?.userID);
       return index == -1 ? false : true;
     }).toList();
 
     List<V2TimFriendInfoResult> halfFilteredFriendResultList = isShowAll
         ? filteredFriendResultList
-        : filteredFriendResultList.sublist(0, min(defaultShowLines, filteredFriendResultList.length));
+        : filteredFriendResultList.sublist(
+            0, min(defaultShowLines, filteredFriendResultList.length));
 
     if (filteredFriendResultList.isNotEmpty) {
       return TIMUIKitSearchFolder(folderName: TIM_t("联系人"), children: [
         ...halfFilteredFriendResultList.map((conv) {
-          int convIndex = _conversationList.indexWhere((item) => conv.friendInfo?.userID == item?.userID);
+          int convIndex = _conversationList
+              .indexWhere((item) => conv.friendInfo?.userID == item?.userID);
           V2TimConversation conversation = _conversationList[convIndex]!;
           late String? showNickName;
-          if (conv.friendInfo?.friendRemark != null && conv.friendInfo?.friendRemark != "") {
+          if (conv.friendInfo?.friendRemark != null &&
+              conv.friendInfo?.friendRemark != "") {
             showNickName = conv.friendInfo?.friendRemark;
-          } else if (conv.friendInfo?.userProfile?.nickName != null && conv.friendInfo?.userProfile?.nickName != "") {
+          } else if (conv.friendInfo?.userProfile?.nickName != null &&
+              conv.friendInfo?.userProfile?.nickName != "") {
             showNickName = conv.friendInfo?.userProfile?.nickName;
           } else {
             showNickName = conv.friendInfo?.userID;
@@ -75,7 +86,7 @@ class TIMUIKitSearchFriendState extends TIMUIKitState<TIMUIKitSearchFriend> {
               widget.onTapConversation(conversation, null);
             },
             faceUrl: conv.friendInfo?.userProfile?.faceUrl ?? "",
-            showName: "",
+            showName: showNickName!,
             lineOne: conversation.userID!,
             lineTwo: TIM_t("昵称") + ":" + showNickName!,
           );
